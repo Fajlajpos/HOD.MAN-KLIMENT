@@ -1,246 +1,210 @@
 <!DOCTYPE html>
-<html lang="cs" class="dark">
+<html lang="cs">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
   <link rel="canonical" href="https://www.hodinovymanzel-kliment.cz/galerie.html">
-  
-  <!-- SEO_TODO: [FAJLAJP] ZDE DOPLŇ FINÁLNÍ SEO DATA -->
   <title>Galerie realizací – Jiří Kliment | Hodinový manžel Brno</title>
-  
-  <!-- SEO_TODO: [FAJLAJP] ZDE DOPLŇ FINÁLNÍ SEO DATA -->
   <meta name="description" content="Prohlédněte si fotky naší práce. Před a po srovnání rekonstrukcí, detailní ukázky elektroinstalací, malování a instalatérských oprav hodinového manžela v Brně.">
   <meta name="keywords" content="reference hodinový manžel Brno, fotky malování Brno, ukázky elektroinstalací Brno, opravy koupelen Brno">
-  
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome 6 Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="page-white">
 
   <div id="progress-bar" class="progress-bar" aria-hidden="true"></div>
 
-  <!-- Shared Header -->
-  <header class="header">
-    <div class="container header-container">
-      <a href="index.html" class="logo" aria-label="Jiří Kliment - domů">
-        <span class="logo-name">Jiří Kliment</span>
-        <span class="logo-subtitle">Hodinový manžel Brno</span>
+  <!-- ── HEADER ── -->
+  <header class="hw-header" id="hw-header">
+    <div class="hw-container hw-header-inner">
+      <a href="index.html" class="hw-logo" aria-label="Jiří Kliment – domů">
+        <span class="hw-logo-name">Jiří Kliment</span>
+        <span class="hw-logo-sub">Hodinový manžel Brno</span>
       </a>
-
-      <!-- Desktop Navigation -->
-      <nav class="nav-desktop" aria-label="Hlavní navigace">
-        <ul class="nav-list">
-          <li><a href="index.html" class="nav-link">Úvod</a></li>
-          <li><a href="sluzby.html" class="nav-link">Služby & Ceník</a></li>
-          <li><a href="o-mne.html" class="nav-link">O mně</a></li>
-          <li><a href="galerie.html" class="nav-link active">Galerie</a></li>
-          <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
+      <nav class="hw-nav" id="hw-nav" aria-label="Hlavní navigace">
+        <ul class="hw-nav-list">
+          <li><a href="index.html"   class="hw-nav-link">Úvod</a></li>
+          <li><a href="sluzby.html"  class="hw-nav-link">Služby &amp; Ceník</a></li>
+          <li><a href="o-mne.html"   class="hw-nav-link">O mně</a></li>
+          <li><a href="galerie.html" class="hw-nav-link hw-active">Galerie</a></li>
+          <li><a href="kontakt.html" class="hw-nav-link">Kontakt</a></li>
         </ul>
       </nav>
-
-      <div class="header-actions">
-        <a href="tel:+420736545899" class="nav-cta-btn" aria-label="Zavolat Jiřímu Klimentovi">+420 736 545 899</a>
-
-        <button id="hamburger-btn" class="hamburger-btn" aria-expanded="false" aria-controls="nav-mobile" aria-label="Otevřít menu">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
+      <div class="hw-header-right">
+        <a href="tel:+420736545899" class="hw-cta-pill">+420 736 545 899</a>
+        <button class="hw-hamburger" id="hw-hamburger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="hw-mobile-nav">
+          <span></span><span></span>
         </button>
       </div>
     </div>
+    <nav class="hw-mobile-nav" id="hw-mobile-nav" aria-hidden="true">
+      <ul>
+        <li><a href="index.html">Úvod</a></li>
+        <li><a href="sluzby.html">Služby &amp; Ceník</a></li>
+        <li><a href="o-mne.html">O mně</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+      <a href="tel:+420736545899" class="hw-cta-pill hw-mobile-cta">+420 736 545 899</a>
+    </nav>
   </header>
 
-  <!-- Mobile Navigation Drawer -->
-  <nav id="nav-mobile" class="nav-mobile" aria-label="Mobilní navigace" aria-hidden="true">
-    <ul class="nav-mobile-list">
-      <li><a href="index.html" class="nav-mobile-link">Úvod</a></li>
-      <li><a href="sluzby.html" class="nav-mobile-link">Služby & Ceník</a></li>
-      <li><a href="o-mne.html" class="nav-mobile-link">O mně</a></li>
-      <li><a href="galerie.html" class="nav-mobile-link active">Galerie</a></li>
-      <li><a href="kontakt.html" class="nav-mobile-link">Kontakt</a></li>
-    </ul>
-    <div class="nav-mobile-footer">
-      <a href="tel:+420736545899" class="mobile-contact-btn phone">+420 736 545 899</a>
-      <a href="mailto:kliment.jiri@post.cz" class="mobile-contact-btn email">kliment.jiri@post.cz</a>
-    </div>
-  </nav>
-
-  <!-- Main Content -->
   <main>
 
-    <!-- Page Intro Header -->
-    <section class="page-intro-header">
-      <div class="hero-dots-pattern" aria-hidden="true"></div>
-      
-
-      <div class="container">
-        <a href="index.html" class="back-link">← Zpět na úvod</a>
-        <span class="section-subtitle label-tag">Naše projekty</span>
-        <h1 class="hero-title" style="font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 10px;">Galerie dokončených prací</h1>
-        <p style="color: var(--text-secondary); max-width: 600px;">
-          Podívejte se na reálné výsledky mé práce v Brně a okolí. U každého projektu si zakládám na detailech, čistotě a stoprocentní funkčnosti.
+    <!-- ── PAGE HERO ── -->
+    <section class="hw-page-hero">
+      <div class="hw-dots hw-dots--tr" aria-hidden="true"></div>
+      <div class="hw-container hw-page-hero-inner">
+        <a href="index.html" class="hw-page-breadcrumb">
+          <i class="fa-solid fa-arrow-left"></i> Zpět na úvod
+        </a>
+        <span class="hw-label">Naše projekty</span>
+        <h1 class="hw-page-hero-title">Galerie<br>dokončených prací</h1>
+        <p class="hw-page-hero-desc">
+          Podívejte se na reálné výsledky mé práce v Brně a okolí. U každého projektu
+          si zakládám na detailech, čistotě a stoprocentní funkčnosti.
         </p>
+      </div>
+      <div class="hw-page-hero-arc" aria-hidden="true">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,80 C360,0 1080,0 1440,80 L1440,80 L0,80 Z" fill="#F8F6F2"/>
+        </svg>
       </div>
     </section>
 
-    <!-- Before / After Slider Section -->
-    <section class="section-padding section-light">
-      <div class="container">
-        <div class="section-header text-center">
-          <span class="section-subtitle label-tag">Srovnání</span>
-          <h2 class="section-title">Interaktivní srovnání před a po realizaci</h2>
-          <!-- SEO / GEO Citation Magnet -->
-          <p class="citation-magnet" style="margin-bottom: 24px; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <!-- ── BEFORE / AFTER SLIDER ── -->
+    <section class="hw-section--cream" id="srovnani">
+      <div class="hw-container">
+        <div class="hw-section-header">
+          <span class="hw-label">Srovnání</span>
+          <h2 class="hw-section-title">Interaktivní srovnání před a po realizaci</h2>
+          <p class="citation-magnet" style="color:var(--hw-muted);font-size:0.9rem;line-height:1.7;max-width:780px;margin:0 auto 12px;">
             Prohlédněte si srovnání rekonstrukcí před a po realizaci. Přesvědčte se, jak precizně provádíme stavební práce, výměny obkladů a čistou výmalbu přímo v interiérech našich klientů v Brně a okolí.
           </p>
-          <p class="section-description">Posunutím táhla uprostřed obrázku uvidíte stav před zahájením a dokončené dílo po rekonstrukci.</p>
+          <p class="hw-section-subtitle">Posunutím táhla uprostřed obrázku uvidíte stav před zahájením a dokončené dílo po rekonstrukci.</p>
         </div>
-
-        <!-- Before / After Slider -->
+        <!-- Before / After Slider — preserve existing JS behaviour -->
         <div class="before-after-slider reveal-fade">
           <div class="slider-image before">
-            <!-- SEO_TODO: [FAJLAJP] ZDE DOPLŇ FINÁLNÍ SEO DATA -->
             <img src="/fotky praci/pruvodce_rekonstrukci_bytu.jpg" alt="Příprava bytu před rekonstrukcí">
             <span class="simulated-label before-label">Stav v průběhu</span>
           </div>
           <div class="slider-image after">
-            <!-- SEO_TODO: [FAJLAJP] ZDE DOPLŇ FINÁLNÍ SEO DATA -->
             <img src="/fotky praci/Rekonstrukce-bytu-navrhyinterieru-po-uprave16.jpg" alt="Dokončená renovace obývacího pokoje">
             <span class="simulated-label after-label">Dokončené dílo</span>
           </div>
           <div class="slider-handle" aria-hidden="true">
-            <div class="slider-handle-button">
-              <i class="fa-solid fa-arrows-left-right"></i>
-            </div>
+            <div class="slider-handle-button"><i class="fa-solid fa-arrows-left-right"></i></div>
           </div>
           <input type="range" min="0" max="100" value="50" class="slider-range-input" aria-label="Srovnání před a po">
         </div>
       </div>
     </section>
 
-    <!-- Full Photo Grid Section -->
-    <section class="section-padding section-photo bg-work">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-subtitle">Fotogalerie</span>
-          <h2 class="section-title">Detaily odvedené práce</h2>
-          <p class="section-description">Ukázky z různých oborů naší činnosti přímo z brněnských bytů a domů.</p>
+    <!-- ── PHOTO GRID ── -->
+    <section class="hw-section" id="fotogalerie">
+      <div class="hw-container">
+        <div class="hw-section-header">
+          <span class="hw-label">Fotogalerie</span>
+          <h2 class="hw-section-title">Detaily odvedené práce</h2>
+          <p class="hw-section-subtitle">Ukázky z různých oborů naší činnosti přímo z brněnských bytů a domů.</p>
         </div>
-
-        <!-- Real Client Photos Grid -->
-        <div class="gallery-grid">
-          <!-- Card 1 -->
-          <div class="gallery-card reveal-fade">
-            <!-- SEO_TODO: [FAJLAJP] ZDE DOPLŇ FINÁLNÍ SEO DATA -->
-            <img src="/fotky praci/Rekonstrukce-a-Renovace.jpg" alt="Celková rekonstrukce koupelny a bytového jádra" class="gallery-img">
-            <div class="gallery-overlay">
-              <span class="placeholder-tag">Rekonstrukce</span>
-              <span class="gallery-card-title-text">Renovace koupelny a obkladů</span>
+        <div class="hw-gallery-grid">
+          <div class="hw-gallery-card reveal-fade">
+            <img src="/fotky praci/Rekonstrukce-a-Renovace.jpg" alt="Celková rekonstrukce koupelny a bytového jádra">
+            <div class="hw-gallery-overlay">
+              <span class="hw-gallery-tag">Rekonstrukce</span>
+              <span class="hw-gallery-card-title">Renovace koupelny a obkladů</span>
             </div>
           </div>
-          
-          <!-- Card 2 -->
-          <div class="gallery-card reveal-fade">
-            <!-- SEO_TODO: [FAJLAJP] ZDE DOPLŇ FINÁLNÍ SEO DATA -->
-            <img src="/fotky praci/Stary-vs-novy-.jpg" alt="Srovnání starých a nových rozvodů" class="gallery-img">
-            <div class="gallery-overlay">
-              <span class="placeholder-tag">Instalace</span>
-              <span class="gallery-card-title-text">Srovnání rozvodů a výmalby</span>
+          <div class="hw-gallery-card reveal-fade">
+            <img src="/fotky praci/Stary-vs-novy-.jpg" alt="Srovnání starých a nových rozvodů">
+            <div class="hw-gallery-overlay">
+              <span class="hw-gallery-tag">Instalace</span>
+              <span class="hw-gallery-card-title">Srovnání rozvodů a výmalby</span>
             </div>
           </div>
-
-          <!-- Card 3 -->
-          <div class="gallery-card reveal-fade">
-            <!-- SEO_TODO: [FAJLAJP] ZDE DOPLŇ FINÁLNÍ SEO DATA -->
-            <img src="/fotky praci/01_slider-.jpg" alt="Výmalba a sádrokartonářské podhledy" class="gallery-img">
-            <div class="gallery-overlay">
-              <span class="placeholder-tag">Malování</span>
-              <span class="gallery-card-title-text">Sádrokartony and čistá výmalba</span>
+          <div class="hw-gallery-card reveal-fade">
+            <img src="/fotky praci/01_slider-.jpg" alt="Výmalba a sádrokartonářské podhledy">
+            <div class="hw-gallery-overlay">
+              <span class="hw-gallery-tag">Malování</span>
+              <span class="hw-gallery-card-title">Sádrokartony a čistá výmalba</span>
             </div>
           </div>
-
-          <!-- Card 4 -->
-          <div class="gallery-card reveal-fade">
-            <!-- SEO_TODO: [FAJLAJP] ZDE DOPLŇ FINÁLNÍ SEO DATA -->
-            <img src="/fotky praci/pruvodce_rekonstrukci_bytu.jpg" alt="Stavební zapravení a omítky" class="gallery-img">
-            <div class="gallery-overlay">
-              <span class="placeholder-tag">Stavební práce</span>
-              <span class="gallery-card-title-text">Přípravné a stavební práce</span>
+          <div class="hw-gallery-card reveal-fade">
+            <img src="/fotky praci/pruvodce_rekonstrukci_bytu.jpg" alt="Stavební zapravení a omítky">
+            <div class="hw-gallery-overlay">
+              <span class="hw-gallery-tag">Stavební práce</span>
+              <span class="hw-gallery-card-title">Přípravné a stavební práce</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="section-padding section-light">
-      <div class="container">
-        <div class="section-header text-center">
-          <span class="section-subtitle label-tag">Recenze</span>
-          <h2 class="section-title">Co o mé práci říkají zákazníci</h2>
-          <p class="section-description">Všechny recenze pocházejí od reálných klientů z Brna a okolí.</p>
+    <!-- ── TESTIMONIALS ── -->
+    <section class="hw-section--cream" id="recenze">
+      <div class="hw-container">
+        <div class="hw-section-header">
+          <span class="hw-label">Recenze</span>
+          <h2 class="hw-section-title">Co o mé práci říkají zákazníci</h2>
+          <p class="hw-section-subtitle">Všechny recenze pocházejí od reálných klientů z Brna a okolí.</p>
         </div>
-
-        <div class="contact-testimonials" style="margin-top: 0; border-top: none; padding-top: 0;">
-          <div class="testimonials-list">
-            <blockquote class="testimonial-bubble reveal-fade">
-              <div class="bubble-meta">
-                <span class="bubble-stars">★★★★★</span>
-                <span class="bubble-service">Malování & Montáž</span>
-              </div>
-              <p>„Pan Kliment mi vymaloval celý byt a namontoval skříně v předsíni. Oceňuji naprostou čistotu – po jeho odchodu jsem nemusela vůbec uklízet. Skvělá domluva.“</p>
-              <cite>— Marie Novotná, Brno - Královo Pole</cite>
-            </blockquote>
-            
-            <blockquote class="testimonial-bubble reveal-fade">
-              <div class="bubble-meta">
-                <span class="bubble-stars">★★★★★</span>
-                <span class="bubble-service">Elektroinstalace</span>
-              </div>
-              <p>„Hledal jsem někoho na výměnu jističů a instalaci nových stropních LED světel. Pan Kliment dorazil přesně na čas. Německá preciznost a profesionální přístup.“</p>
-              <cite>— Pavel Kovář, Brno - Židenice</cite>
-            </blockquote>
+        <div class="hw-testimonials-grid">
+          <div class="hw-testimonial reveal-fade">
+            <div>
+              <div class="hw-testimonial-stars">★★★★★</div>
+              <div class="hw-testimonial-service">Malování &amp; Montáž</div>
+            </div>
+            <p>„Pan Kliment mi vymaloval celý byt a namontoval skříně v předsíni. Oceňuji naprostou čistotu – po jeho odchodu jsem nemusela vůbec uklízet. Skvělá domluva."</p>
+            <cite>— Marie Novotná, Brno - Královo Pole</cite>
           </div>
+          <div class="hw-testimonial reveal-fade">
+            <div>
+              <div class="hw-testimonial-stars">★★★★★</div>
+              <div class="hw-testimonial-service">Elektroinstalace</div>
+            </div>
+            <p>„Hledal jsem někoho na výměnu jističů a instalaci nových stropních LED světel. Pan Kliment dorazil přesně na čas. Německá preciznost a profesionální přístup."</p>
+            <cite>— Pavel Kovář, Brno - Židenice</cite>
+          </div>
+        </div>
+        <div class="hw-services-cta" style="margin-top:56px;">
+          <a href="kontakt.html" class="hw-btn-dark">Sjednat termín <i class="fa-solid fa-arrow-right" style="margin-left:8px;font-size:0.85em;"></i></a>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- Shared Footer -->
-  <footer class="footer">
-    <div class="container footer-container">
-      <div class="footer-brand">
-        <span class="footer-logo-name">Jiří Kliment</span>
-        <span class="footer-logo-subtitle">Hodinový manžel Brno a okolí</span>
-        <p class="footer-copyright">&copy; 2026 Jiří Kliment. Všechna práva vyhrazena. | IČ: 72436662</p>
+  <!-- ── FOOTER ── -->
+  <footer class="hw-footer">
+    <div class="hw-container hw-footer-inner">
+      <div class="hw-footer-brand">
+        <span class="hw-footer-name">Jiří Kliment</span>
+        <span class="hw-footer-tagline">Hodinový manžel Brno a okolí</span>
       </div>
-      <p class="footer-author">Vytvořil <span class="author-highlight">FAJLAJP Design Engine</span></p>
+      <div class="hw-footer-social" role="list">
+        <a href="https://www.facebook.com/profile.php?id=100054555048234" target="_blank" rel="noopener" class="hw-social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="hw-social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://maps.google.com/?q=Hlaváčova+458/43,+Brno" target="_blank" rel="noopener" class="hw-social-link" aria-label="Google Maps"><i class="fa-brands fa-google"></i></a>
+        <a href="tel:+420736545899" class="hw-social-link" aria-label="Telefon"><i class="fa-solid fa-phone"></i></a>
+        <a href="mailto:kliment.jiri@post.cz" class="hw-social-link" aria-label="E-mail"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+      <p class="hw-footer-copy">&copy; 2026 Jiří Kliment. Všechna práva vyhrazena. | IČ: 72436662</p>
     </div>
   </footer>
 
-  <!-- Shared Floating Call Button -->
   <a href="tel:+420736545899" class="floating-cta" aria-label="Zavolat Jiřímu Klimentovi" title="Zavolat hned">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
     <span class="floating-cta-text">Rychlé volání</span>
   </a>
-
-  <!-- Shared Back to Top Button -->
-  <button id="back-to-top" class="back-to-top" aria-label="Zpět nahoru" title="Zpět nahoru">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
-  </button>
-
-  <!-- Shared Cookie Consent Bar -->
+  <button id="back-to-top" class="back-to-top" aria-label="Zpět nahoru"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
   <div id="cookie-bar" class="cookie-bar" role="dialog" aria-modal="true" aria-hidden="true">
     <div class="cookie-content">
-      <p class="cookie-desc">Pro optimální fungování webu a analýzu návštěvnosti používám soubory cookies. Kliknutím vyjadřujete svůj souhlas.</p>
+      <p class="cookie-desc">Pro optimální fungování webu a analýzu návštěvnosti používám soubory cookies. Kliknutím vyjadřujete souhlas.</p>
       <div class="cookie-actions">
         <button id="cookie-accept-necessary" class="cookie-btn cookie-btn-secondary">Nezbytné</button>
         <button id="cookie-accept-all" class="cookie-btn cookie-btn-primary">Přijmout vše</button>
@@ -249,5 +213,12 @@
   </div>
 
   <script type="module" src="script.js"></script>
+  <script>
+    (function(){
+      const h=document.getElementById('hw-header'),hb=document.getElementById('hw-hamburger'),mn=document.getElementById('hw-mobile-nav');
+      window.addEventListener('scroll',()=>h.classList.toggle('hw-header--scrolled',window.scrollY>20));
+      if(hb&&mn){hb.addEventListener('click',()=>{const o=mn.classList.toggle('open');hb.classList.toggle('active',o);hb.setAttribute('aria-expanded',o);mn.setAttribute('aria-hidden',!o);document.body.style.overflow=o?'hidden':'';});mn.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mn.classList.remove('open');hb.classList.remove('active');hb.setAttribute('aria-expanded','false');mn.setAttribute('aria-hidden','true');document.body.style.overflow='';}));}
+    })();
+  </script>
 </body>
 </html>

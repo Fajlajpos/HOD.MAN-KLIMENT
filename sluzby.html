@@ -1,224 +1,186 @@
 <!DOCTYPE html>
-<html lang="cs" class="dark">
+<html lang="cs">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
   <link rel="canonical" href="https://www.hodinovymanzel-kliment.cz/sluzby.html">
-  
-  <!-- SEO_TODO: [FAJLAJP] ZDE DOPLŇ FINÁLNÍ SEO DATA -->
-  <title>Služby & Ceník – Jiří Kliment | Hodinový manžel Brno</title>
-  
-  <!-- SEO_TODO: [FAJLAJP] ZDE DOPLŇ FINÁLNÍ SEO DATA -->
+  <title>Služby &amp; Ceník – Jiří Kliment | Hodinový manžel Brno</title>
   <meta name="description" content="Detailní ceník a přehled řemeslných služeb hodinového manžela Jiřího Klimenta v Brně. Nabízíme elektroinstalace, malování pokojů, instalatérské a drobné zednické práce. Hodinová sazba 500 Kč.">
   <meta name="keywords" content="ceník hodinový manžel Brno, elektrikářské práce Brno, instalatérské práce Brno, malování pokojů Brno, stavební úpravy Brno">
-  
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome 6 Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="page-white">
 
   <div id="progress-bar" class="progress-bar" aria-hidden="true"></div>
 
-  <!-- Shared Header -->
-  <header class="header">
-    <div class="container header-container">
-      <a href="index.html" class="logo" aria-label="Jiří Kliment - domů">
-        <span class="logo-name">Jiří Kliment</span>
-        <span class="logo-subtitle">Hodinový manžel Brno</span>
+  <!-- ── HEADER ── -->
+  <header class="hw-header" id="hw-header">
+    <div class="hw-container hw-header-inner">
+      <a href="index.html" class="hw-logo" aria-label="Jiří Kliment – domů">
+        <span class="hw-logo-name">Jiří Kliment</span>
+        <span class="hw-logo-sub">Hodinový manžel Brno</span>
       </a>
-
-      <!-- Desktop Navigation -->
-      <nav class="nav-desktop" aria-label="Hlavní navigace">
-        <ul class="nav-list">
-          <li><a href="index.html" class="nav-link">Úvod</a></li>
-          <li><a href="sluzby.html" class="nav-link active">Služby & Ceník</a></li>
-          <li><a href="o-mne.html" class="nav-link">O mně</a></li>
-          <li><a href="galerie.html" class="nav-link">Galerie</a></li>
-          <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
+      <nav class="hw-nav" id="hw-nav" aria-label="Hlavní navigace">
+        <ul class="hw-nav-list">
+          <li><a href="index.html"   class="hw-nav-link">Úvod</a></li>
+          <li><a href="sluzby.html"  class="hw-nav-link hw-active">Služby &amp; Ceník</a></li>
+          <li><a href="o-mne.html"   class="hw-nav-link">O mně</a></li>
+          <li><a href="galerie.html" class="hw-nav-link">Galerie</a></li>
+          <li><a href="kontakt.html" class="hw-nav-link">Kontakt</a></li>
         </ul>
       </nav>
-
-      <div class="header-actions">
-        <a href="tel:+420736545899" class="nav-cta-btn" aria-label="Zavolat Jiřímu Klimentovi">+420 736 545 899</a>
-
-        <button id="hamburger-btn" class="hamburger-btn" aria-expanded="false" aria-controls="nav-mobile" aria-label="Otevřít menu">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
+      <div class="hw-header-right">
+        <a href="tel:+420736545899" class="hw-cta-pill">+420 736 545 899</a>
+        <button class="hw-hamburger" id="hw-hamburger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="hw-mobile-nav">
+          <span></span><span></span>
         </button>
       </div>
     </div>
+    <nav class="hw-mobile-nav" id="hw-mobile-nav" aria-hidden="true">
+      <ul>
+        <li><a href="index.html">Úvod</a></li>
+        <li><a href="sluzby.html">Služby &amp; Ceník</a></li>
+        <li><a href="o-mne.html">O mně</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+      <a href="tel:+420736545899" class="hw-cta-pill hw-mobile-cta">+420 736 545 899</a>
+    </nav>
   </header>
 
-  <!-- Mobile Navigation Drawer -->
-  <nav id="nav-mobile" class="nav-mobile" aria-label="Mobilní navigace" aria-hidden="true">
-    <ul class="nav-mobile-list">
-      <li><a href="index.html" class="nav-mobile-link">Úvod</a></li>
-      <li><a href="sluzby.html" class="nav-mobile-link active">Služby & Ceník</a></li>
-      <li><a href="o-mne.html" class="nav-mobile-link">O mně</a></li>
-      <li><a href="galerie.html" class="nav-mobile-link">Galerie</a></li>
-      <li><a href="kontakt.html" class="nav-mobile-link">Kontakt</a></li>
-    </ul>
-    <div class="nav-mobile-footer">
-      <a href="tel:+420736545899" class="mobile-contact-btn phone">+420 736 545 899</a>
-      <a href="mailto:kliment.jiri@post.cz" class="mobile-contact-btn email">kliment.jiri@post.cz</a>
-    </div>
-  </nav>
-
-  <!-- Main Content -->
   <main>
 
-    <!-- Page Intro Header -->
-    <section class="page-intro-header">
-      <div class="hero-dots-pattern" aria-hidden="true"></div>
-      
-
-      <div class="container">
-        <a href="index.html" class="back-link">← Zpět na úvod</a>
-        <span class="section-subtitle label-tag">Přehled služeb</span>
-        <h1 class="hero-title" style="font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 10px;">Co pro vás mohu udělat</h1>
-        <p style="color: var(--text-secondary); max-width: 600px;">
-          Níže naleznete podrobný seznam řemeslných prací a transparentní sazby. Větší zakázky a specifické požadavky naceňuji individuálně.
+    <!-- ── PAGE HERO ── -->
+    <section class="hw-page-hero">
+      <div class="hw-dots hw-dots--tr" aria-hidden="true"></div>
+      <div class="hw-container hw-page-hero-inner">
+        <a href="index.html" class="hw-page-breadcrumb">
+          <i class="fa-solid fa-arrow-left"></i> Zpět na úvod
+        </a>
+        <span class="hw-label">Přehled služeb</span>
+        <h1 class="hw-page-hero-title">Co pro vás<br>mohu udělat</h1>
+        <p class="hw-page-hero-desc">
+          Níže naleznete podrobný seznam řemeslných prací a transparentní sazby.
+          Větší zakázky a specifické požadavky naceňuji individuálně.
         </p>
+      </div>
+      <div class="hw-page-hero-arc" aria-hidden="true">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,80 C360,0 1080,0 1440,80 L1440,80 L0,80 Z" fill="#F8F6F2"/>
+        </svg>
       </div>
     </section>
 
-    <!-- Services Grid -->
-    <section class="section-padding section-light">
-      <div class="container">
-        <!-- SEO / GEO Citation Magnet -->
-        <p class="citation-magnet" style="margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <!-- ── SERVICE CARDS ── -->
+    <section class="hw-section--cream" id="prehled-sluzeb">
+      <div class="hw-container">
+        <!-- SEO citation -->
+        <p class="citation-magnet" style="margin-bottom:40px;max-width:800px;margin-left:auto;margin-right:auto;color:var(--hw-muted);font-size:0.9rem;line-height:1.7;">
           Jiří Kliment provádí profesionální elektrikářské, malířské, instalatérské a zednické práce v Brně a okolí. Specializuje se na bezpečné zapojení elektroinstalací, precizní štukování a výmalbu bytů, opravy odpadů, montáže kuchyní a nábytku.
         </p>
-        <div class="services-grid">
+        <div class="hw-cards-grid" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));">
+
           <!-- 1. Elektro -->
-          <article class="service-card reveal-fade">
-            <div class="card-icon-box">
-              <i class="fa-regular fa-lightbulb fa-lg"></i>
-            </div>
-            <div class="service-card-body">
-              <h3 class="service-card-title">Elektrické instalace</h3>
-              <p class="service-card-desc">Bezpečné zapojení a drobné opravy elektrických rozvodů a spotřebičů v domácnosti.</p>
-              <ul class="service-card-checklist">
-                <li>Montáž a zapojení stropních i nástěnných svítidel</li>
-                <li>Výměna poškozených zásuvek, vypínačů a jističů</li>
-                <li>Odborné zapojení varných desek, trub, myček a praček</li>
-                <li>Instalace designových LED profilů a pásek</li>
-              </ul>
-            </div>
-            <div class="service-card-pricing-footer">500 Kč / hod</div>
+          <article class="hw-card" id="elektro">
+            <div class="hw-card-icon" aria-hidden="true"><i class="fa-regular fa-lightbulb fa-lg"></i></div>
+            <h3 class="hw-card-title">Elektrické instalace</h3>
+            <p class="hw-card-desc">Bezpečné zapojení a drobné opravy elektrických rozvodů a spotřebičů v domácnosti.</p>
+            <ul class="hw-card-checklist">
+              <li>Montáž a zapojení stropních i nástěnných svítidel</li>
+              <li>Výměna poškozených zásuvek, vypínačů a jističů</li>
+              <li>Odborné zapojení varných desek, trub, myček a praček</li>
+              <li>Instalace designových LED profilů a pásek</li>
+            </ul>
+            <div class="hw-card-price-tag">500 Kč / hod</div>
           </article>
 
           <!-- 2. Malování -->
-          <article class="service-card reveal-fade">
-            <div class="card-icon-box">
-              <i class="fa-regular fa-image fa-lg"></i>
-            </div>
-            <div class="service-card-body">
-              <h3 class="service-card-title">Malování a tapetování</h3>
-              <p class="service-card-desc">Precizní příprava stěn a nátěry bez zbytečného nepořádku a stékanců.</p>
-              <ul class="service-card-checklist">
-                <li>Štukování stěn, oprava spár, děr a tmelení omítek</li>
-                <li>Malování interiérů, bytů, domů i firemních prostor</li>
-                <li>Lepení klasických papírových, vliesových i vinylových tapet</li>
-                <li>Zakrývání nábytku a kompletní úklid po malování</li>
-              </ul>
-            </div>
-            <div class="service-card-pricing-footer">500 Kč / hod</div>
+          <article class="hw-card" id="malovani">
+            <div class="hw-card-icon" aria-hidden="true"><i class="fa-solid fa-paint-roller fa-lg"></i></div>
+            <h3 class="hw-card-title">Malování &amp; Tapetování</h3>
+            <p class="hw-card-desc">Precizní příprava stěn a nátěry bez zbytečného nepořádku a stékanců.</p>
+            <ul class="hw-card-checklist">
+              <li>Štukování stěn, oprava spár, děr a tmelení omítek</li>
+              <li>Malování interiérů, bytů, domů i firemních prostor</li>
+              <li>Lepení klasických papírových, vliesových i vinylových tapet</li>
+              <li>Zakrývání nábytku a kompletní úklid po malování</li>
+            </ul>
+            <div class="hw-card-price-tag">500 Kč / hod</div>
           </article>
 
-          <!-- 3. Stavební práce -->
-          <article class="service-card reveal-fade">
-            <div class="card-icon-box">
-              <i class="fa-regular fa-building fa-lg"></i>
-            </div>
-            <div class="service-card-body">
-              <h3 class="service-card-title">Stavební práce</h3>
-              <p class="service-card-desc">Drobné stavební a zednické úpravy v interiéru i exteriéru.</p>
-              <ul class="service-card-checklist">
-                <li>Zednické zapravení, omítání a opravy ostění po výměně oken</li>
-                <li>Sádrokartonářské úpravy, stavba příček a podhledů</li>
-                <li>Vrtání do panelu, cihel i betonu pro obrazy a poličky</li>
-                <li>Pokládka podlahových přechodových lišt a opravy prahů</li>
-              </ul>
-            </div>
-            <div class="service-card-pricing-footer">500 Kč / hod</div>
+          <!-- 3. Stavební -->
+          <article class="hw-card" id="stavebni">
+            <div class="hw-card-icon" aria-hidden="true"><i class="fa-regular fa-building fa-lg"></i></div>
+            <h3 class="hw-card-title">Stavební práce</h3>
+            <p class="hw-card-desc">Drobné stavební a zednické úpravy v interiéru i exteriéru.</p>
+            <ul class="hw-card-checklist">
+              <li>Zednické zapravení, omítání a opravy ostění po výměně oken</li>
+              <li>Sádrokartonářské úpravy, stavba příček a podhledů</li>
+              <li>Vrtání do panelu, cihel i betonu pro obrazy a poličky</li>
+              <li>Pokládka podlahových přechodových lišt a opravy prahů</li>
+            </ul>
+            <div class="hw-card-price-tag">500 Kč / hod</div>
           </article>
 
-          <!-- 4. Instalatérské práce -->
-          <article class="service-card reveal-fade">
-            <div class="card-icon-box">
-              <i class="fa-regular fa-compass fa-lg"></i>
-            </div>
-            <div class="service-card-body">
-              <h3 class="service-card-title">Instalatérské práce</h3>
-              <p class="service-card-desc">Rychlé vyřešení běžných problémů s vodou, odpady a sanitou.</p>
-              <ul class="service-card-checklist">
-                <li>Výměna vodovodních dřezových i koupelnových baterií</li>
-                <li>Čištění ucpaných sifonů a oprava protékajících toalet</li>
-                <li>Obnova starého zašlého silikonu u van a sprchových koutů</li>
-                <li>Připojení přívodu vody pro pračky a myčky nádobí</li>
-              </ul>
-            </div>
-            <div class="service-card-pricing-footer">500 Kč / hod</div>
+          <!-- 4. Instalatérské -->
+          <article class="hw-card" id="opravy">
+            <div class="hw-card-icon" aria-hidden="true"><i class="fa-solid fa-wrench fa-lg"></i></div>
+            <h3 class="hw-card-title">Instalatérské práce</h3>
+            <p class="hw-card-desc">Rychlé vyřešení běžných problémů s vodou, odpady a sanitou.</p>
+            <ul class="hw-card-checklist">
+              <li>Výměna vodovodních dřezových i koupelnových baterií</li>
+              <li>Čištění ucpaných sifonů a oprava protékajících toalet</li>
+              <li>Obnova starého zašlého silikonu u van a sprchových koutů</li>
+              <li>Připojení přívodu vody pro pračky a myčky nádobí</li>
+            </ul>
+            <div class="hw-card-price-tag">500 Kč / hod</div>
           </article>
 
-          <!-- 5. Montáže a údržba -->
-          <article class="service-card reveal-fade">
-            <div class="card-icon-box">
-              <i class="fa-regular fa-clock fa-lg"></i>
-            </div>
-            <div class="service-card-body">
-              <h3 class="service-card-title">Montáže a údržba</h3>
-              <p class="service-card-desc">Kompletní sestavení nábytku a pomocné úkony pro funkční a bezpečný domov.</p>
-              <ul class="service-card-checklist">
-                <li>Sestavení nábytku z krabic (IKEA, Kika, Sconto, Asko atd.)</li>
-                <li>Zavěšení těžkých polic, zrcadel, televizí na zeď a garnýží</li>
-                <li>Seřízení křídel oken, dveřních pantů a výměna zámkových vložek</li>
-                <li>Drobné opravy kování a montáž zahradních prvků</li>
-              </ul>
-            </div>
-            <div class="service-card-pricing-footer">500 Kč / hod</div>
+          <!-- 5. Montáže -->
+          <article class="hw-card" id="montaze">
+            <div class="hw-card-icon" aria-hidden="true"><i class="fa-regular fa-clock fa-lg"></i></div>
+            <h3 class="hw-card-title">Montáže &amp; Údržba</h3>
+            <p class="hw-card-desc">Kompletní sestavení nábytku a pomocné úkony pro funkční a bezpečný domov.</p>
+            <ul class="hw-card-checklist">
+              <li>Sestavení nábytku z krabic (IKEA, Kika, Sconto, Asko atd.)</li>
+              <li>Zavěšení těžkých polic, zrcadel, televizí na zeď a garnýží</li>
+              <li>Seřízení křídel oken, dveřních pantů a výměna zámkových vložek</li>
+              <li>Drobné opravy kování a montáž zahradních prvků</li>
+            </ul>
+            <div class="hw-card-price-tag">500 Kč / hod</div>
           </article>
 
           <!-- 6. Doprava -->
-          <article class="service-card transport reveal-fade">
-            <div class="card-icon-box">
-              <i class="fa-regular fa-paper-plane fa-lg"></i>
-            </div>
-            <div class="service-card-body">
-              <h3 class="service-card-title">Doprava po Brně</h3>
-              <p class="service-card-desc">Jednorázový paušální poplatek pokrývá dojezd a veškeré dovážené nářadí.</p>
-              <ul class="service-card-checklist">
-                <li>Paušální dojezd kamkoliv po Brně: 500 Kč</li>
-                <li>Mimo Brno: 500 Kč + 10 Kč / km od okraje Brna</li>
-                <li>Nákup materiálu v průběhu práce: dle dohody</li>
-              </ul>
-            </div>
-            <div class="service-card-pricing-footer">500 Kč (Paušál)</div>
+          <article class="hw-card" id="doprava">
+            <div class="hw-card-icon" aria-hidden="true"><i class="fa-regular fa-paper-plane fa-lg"></i></div>
+            <h3 class="hw-card-title">Doprava po Brně</h3>
+            <p class="hw-card-desc">Jednorázový paušální poplatek pokrývá dojezd a veškeré dovážené nářadí.</p>
+            <ul class="hw-card-checklist">
+              <li>Paušální dojezd kamkoliv po Brně: 500 Kč</li>
+              <li>Mimo Brno: 500 Kč + 10 Kč / km od okraje Brna</li>
+              <li>Nákup materiálu v průběhu práce: dle dohody</li>
+            </ul>
+            <div class="hw-card-price-tag">500 Kč (Paušál)</div>
           </article>
+
         </div>
       </div>
     </section>
 
-    <!-- Structured Price List Section -->
-    <section class="section-padding section-light">
-      <div class="container">
-        <div class="section-header text-center">
-          <span class="section-subtitle label-tag">Ceník</span>
-          <h2 class="section-title">Přehledný ceník řemeslných prací</h2>
-          <p class="section-description">Nabízím férové hodinové sazby a fixní ceny dopravného. Větší rekonstrukce naceňuji individuálně.</p>
+    <!-- ── PRICE TABLE ── -->
+    <section class="hw-section" id="cenik">
+      <div class="hw-container">
+        <div class="hw-section-header">
+          <span class="hw-label">Ceník</span>
+          <h2 class="hw-section-title">Přehledný ceník řemeslných prací</h2>
+          <p class="hw-section-subtitle">Nabízím férové hodinové sazby a fixní ceny dopravného. Větší rekonstrukce naceňuji individuálně.</p>
         </div>
-        
-        <div class="price-table-wrapper reveal-fade">
-          <table class="price-table">
+        <div class="hw-price-table-wrap">
+          <table class="hw-price-table">
             <thead>
               <tr>
                 <th>Kategorie práce</th>
@@ -227,59 +189,29 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td><strong>Elektrikářské práce</strong></td>
-                <td>500 Kč / hod</td>
-                <td>Zapojení svítidel, výměna vypínačů/zásuvek, zapojení varných desek a spotřebičů</td>
-              </tr>
-              <tr>
-                <td><strong>Malování a příprava stěn</strong></td>
-                <td>500 Kč / hod</td>
-                <td>Malování pokojů bez stékanců, štukování děr, tmelení omítek, lepení tapet</td>
-              </tr>
-              <tr>
-                <td><strong>Zednické a stavební úpravy</strong></td>
-                <td>500 Kč / hod</td>
-                <td>Opravy ostění po oknech, stavba sádrokartonových příček, vrtání do betonu/cihly</td>
-              </tr>
-              <tr>
-                <td><strong>Instalatérské opravy</strong></td>
-                <td>500 Kč / hod</td>
-                <td>Výměna vodovodních baterií, čištění sifonů, oprava WC, silikonování sprch</td>
-              </tr>
-              <tr>
-                <td><strong>Montáže a údržba nábytku</strong></td>
-                <td>500 Kč / hod</td>
-                <td>Sestavení nábytku z krabic (IKEA atd.), věšení poliček/garnýží, seřízení pantů oken</td>
-              </tr>
-              <tr>
-                <td><strong>Dopravné po Brně (Paušál)</strong></td>
-                <td>500 Kč (Fixní dojezd)</td>
-                <td>Pokrývá dojezd a veškeré dovážené profesionální nářadí kamkoliv po Brně</td>
-              </tr>
-              <tr>
-                <td><strong>Dopravné mimo Brno</strong></td>
-                <td>500 Kč + 10 Kč / km</td>
-                <td>Mimo Brno účtováno od hranice města Brna za každý kilometr</td>
-              </tr>
+              <tr><td><strong>Elektrikářské práce</strong></td><td>500 Kč / hod</td><td>Zapojení svítidel, výměna vypínačů/zásuvek, zapojení varných desek a spotřebičů</td></tr>
+              <tr><td><strong>Malování a příprava stěn</strong></td><td>500 Kč / hod</td><td>Malování pokojů bez stékanců, štukování děr, tmelení omítek, lepení tapet</td></tr>
+              <tr><td><strong>Zednické a stavební úpravy</strong></td><td>500 Kč / hod</td><td>Opravy ostění po oknech, stavba sádrokartonových příček, vrtání do betonu/cihly</td></tr>
+              <tr><td><strong>Instalatérské opravy</strong></td><td>500 Kč / hod</td><td>Výměna vodovodních baterií, čištění sifonů, oprava WC, silikonování sprch</td></tr>
+              <tr><td><strong>Montáže a údržba nábytku</strong></td><td>500 Kč / hod</td><td>Sestavení nábytku z krabic (IKEA atd.), věšení poliček/garnýží, seřízení pantů oken</td></tr>
+              <tr><td><strong>Dopravné po Brně (Paušál)</strong></td><td>500 Kč (Fixní dojezd)</td><td>Pokrývá dojezd a veškeré dovážené profesionální nářadí kamkoliv po Brně</td></tr>
+              <tr><td><strong>Dopravné mimo Brno</strong></td><td>500 Kč + 10 Kč / km</td><td>Mimo Brno účtováno od hranice města Brna za každý kilometr</td></tr>
             </tbody>
           </table>
         </div>
-        <p class="price-table-note text-center">** Uvedené ceny jsou konečné (nejsem plátce DPH). Spotřebovaný montážní materiál (kabely, hmoždinky, silikony, ventily) se připočítává zvlášť dle reálné spotřeby.</p>
+        <p class="hw-price-table-note">** Uvedené ceny jsou konečné (nejsem plátce DPH). Spotřebovaný montážní materiál (kabely, hmoždinky, silikony, ventily) se připočítává zvlášť dle reálné spotřeby.</p>
       </div>
     </section>
 
-    <!-- Budget Calculator Section -->
-    <section class="section-padding section-photo bg-services">
-      <div class="container">
-        <!-- Budget Calculator -->
-        <div class="price-calculator reveal-fade" style="margin-top: 0;">
-          <div class="calc-header">
-            <span class="section-subtitle">Chytrý odhad</span>
-            <h2 class="calc-title">Kalkulačka předběžného rozpočtu</h2>
-            <p class="calc-subtitle">Zadejte předpokládaný rozsah a okamžitě uvidíte položkový rozpis.</p>
-          </div>
-
+    <!-- ── CALCULATOR ── -->
+    <section class="hw-section--cream" id="kalkulacka">
+      <div class="hw-container">
+        <div class="hw-section-header">
+          <span class="hw-label">Chytrý odhad</span>
+          <h2 class="hw-section-title">Kalkulačka předběžného rozpočtu</h2>
+          <p class="hw-section-subtitle">Zadejte předpokládaný rozsah a okamžitě uvidíte položkový rozpis.</p>
+        </div>
+        <div class="hw-calc-wrap">
           <div class="calc-grid">
             <div class="calc-inputs">
               <div class="calc-field">
@@ -289,7 +221,6 @@
                   <span id="hours-display" class="hours-badge">2 hodiny</span>
                 </div>
               </div>
-
               <div class="calc-field">
                 <span class="calc-field-label">Místo realizace (dopravné):</span>
                 <div class="radio-selectors">
@@ -303,32 +234,20 @@
                   </label>
                 </div>
               </div>
-
               <div id="km-input-container" class="calc-field hidden">
                 <label for="calc-km" class="calc-field-label">Vzdálenost od okraje Brna (km):</label>
                 <input type="number" id="calc-km" min="1" max="120" value="10" class="number-input">
               </div>
             </div>
-
-            <!-- Receipt Breakdown Summary Box -->
             <div class="calc-summary-card">
               <span class="summary-title">Předběžná kalkulace</span>
               <div class="summary-lines">
-                <div class="summary-item-line">
-                  <span>Práce řemeslníka:</span>
-                  <span id="summary-work-price">1 000 Kč</span>
-                </div>
-                <div class="summary-item-line">
-                  <span>Dopravné a režie:</span>
-                  <span id="summary-transport-price">500 Kč</span>
-                </div>
-                <div class="summary-total-line">
-                  <span>Celková cena:</span>
-                  <span id="calc-total-price">1 500 Kč</span>
-                </div>
+                <div class="summary-item-line"><span>Práce řemeslníka:</span><span id="summary-work-price">1 000 Kč</span></div>
+                <div class="summary-item-line"><span>Dopravné a režie:</span><span id="summary-transport-price">500 Kč</span></div>
+                <div class="summary-total-line"><span>Celková cena:</span><span id="calc-total-price">1 500 Kč</span></div>
               </div>
               <p class="summary-footer-note">Cena je orientační a nezahrnuje spotřebovaný montážní materiál.</p>
-              <a href="kontakt.html" class="btn btn-primary" id="calc-cta-btn">Poptat s touto kalkulací</a>
+              <a href="kontakt.html" class="hw-btn-dark" id="calc-cta-btn">Poptat s touto kalkulací <i class="fa-solid fa-arrow-right" style="margin-left:8px;font-size:0.85em;"></i></a>
             </div>
           </div>
         </div>
@@ -337,33 +256,32 @@
 
   </main>
 
-  <!-- Shared Footer -->
-  <footer class="footer">
-    <div class="container footer-container">
-      <div class="footer-brand">
-        <span class="footer-logo-name">Jiří Kliment</span>
-        <span class="footer-logo-subtitle">Hodinový manžel Brno a okolí</span>
-        <p class="footer-copyright">&copy; 2026 Jiří Kliment. Všechna práva vyhrazena. | IČ: 72436662</p>
+  <!-- ── FOOTER ── -->
+  <footer class="hw-footer">
+    <div class="hw-container hw-footer-inner">
+      <div class="hw-footer-brand">
+        <span class="hw-footer-name">Jiří Kliment</span>
+        <span class="hw-footer-tagline">Hodinový manžel Brno a okolí</span>
       </div>
-      <p class="footer-author">Vytvořil <span class="author-highlight">FAJLAJP Design Engine</span></p>
+      <div class="hw-footer-social" role="list">
+        <a href="https://www.facebook.com/profile.php?id=100054555048234" target="_blank" rel="noopener" class="hw-social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="hw-social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://maps.google.com/?q=Hlaváčova+458/43,+Brno" target="_blank" rel="noopener" class="hw-social-link" aria-label="Google Maps"><i class="fa-brands fa-google"></i></a>
+        <a href="tel:+420736545899" class="hw-social-link" aria-label="Telefon"><i class="fa-solid fa-phone"></i></a>
+        <a href="mailto:kliment.jiri@post.cz" class="hw-social-link" aria-label="E-mail"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+      <p class="hw-footer-copy">&copy; 2026 Jiří Kliment. Všechna práva vyhrazena. | IČ: 72436662</p>
     </div>
   </footer>
 
-  <!-- Shared Floating Call Button -->
   <a href="tel:+420736545899" class="floating-cta" aria-label="Zavolat Jiřímu Klimentovi" title="Zavolat hned">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
     <span class="floating-cta-text">Rychlé volání</span>
   </a>
-
-  <!-- Shared Back to Top Button -->
-  <button id="back-to-top" class="back-to-top" aria-label="Zpět nahoru" title="Zpět nahoru">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
-  </button>
-
-  <!-- Shared Cookie Consent Bar -->
+  <button id="back-to-top" class="back-to-top" aria-label="Zpět nahoru"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
   <div id="cookie-bar" class="cookie-bar" role="dialog" aria-modal="true" aria-hidden="true">
     <div class="cookie-content">
-      <p class="cookie-desc">Pro optimální fungování webu a analýzu návštěvnosti používám soubory cookies. Kliknutím vyjadřujete svůj souhlas.</p>
+      <p class="cookie-desc">Pro optimální fungování webu a analýzu návštěvnosti používám soubory cookies. Kliknutím vyjadřujete souhlas.</p>
       <div class="cookie-actions">
         <button id="cookie-accept-necessary" class="cookie-btn cookie-btn-secondary">Nezbytné</button>
         <button id="cookie-accept-all" class="cookie-btn cookie-btn-primary">Přijmout vše</button>
@@ -372,5 +290,12 @@
   </div>
 
   <script type="module" src="script.js"></script>
+  <script>
+    (function(){
+      const h=document.getElementById('hw-header'),hb=document.getElementById('hw-hamburger'),mn=document.getElementById('hw-mobile-nav');
+      window.addEventListener('scroll',()=>h.classList.toggle('hw-header--scrolled',window.scrollY>20));
+      if(hb&&mn){hb.addEventListener('click',()=>{const o=mn.classList.toggle('open');hb.classList.toggle('active',o);hb.setAttribute('aria-expanded',o);mn.setAttribute('aria-hidden',!o);document.body.style.overflow=o?'hidden':'';});mn.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mn.classList.remove('open');hb.classList.remove('active');hb.setAttribute('aria-expanded','false');mn.setAttribute('aria-hidden','true');document.body.style.overflow='';}));}
+    })();
+  </script>
 </body>
 </html>
