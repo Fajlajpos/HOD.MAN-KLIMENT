@@ -45,6 +45,7 @@
       "@type": "PostalAddress",
       "streetAddress": "Hlaváčova 458/43",
       "addressLocality": "Brno",
+
       "postalCode": "614 00",
       "addressCountry": "CZ"
     },
@@ -61,9 +62,7 @@
   }
   </script>
 </head>
-<body class="page-white">
-
-  <div id="progress-bar" class="progress-bar" aria-hidden="true"></div>
+<body class="page-white page-home">
 
   <!-- ============================================================
        HEADER – white bg, logo left, nav center, pill CTA right
@@ -121,8 +120,7 @@
          ============================================================ -->
     <section id="uvod" class="hw-hero hw-hero--fullphoto">
 
-      <!-- ★ FULL-BLEED HERO PHOTO — photo covers the entire hero area,
-           only the bottom is cut by the concave arc below -->
+      <!-- ★ FULL-BLEED HERO PHOTO — photo covers the entire hero area -->
       <div class="hw-hero-photo-bg" aria-hidden="true">
         <img
           src="/fotky jijrky/Profesionalni hodinovy manzel pri praci-1.png"
@@ -130,8 +128,7 @@
           class="hw-hero-bg-img"
           fetchpriority="high"
         >
-        <!-- Gradient: dark on the left for text legibility,
-             transparent on the right so the full photo is visible -->
+        <!-- Gradient: dark overlay -->
         <div class="hw-hero-overlay"></div>
       </div>
 
@@ -142,68 +139,67 @@
       <div class="hw-container hw-hero-inner">
         <div class="hw-hero-left">
 
-          <span class="hw-label hw-label--light">
+          <div class="hw-hero-badge">
+            <span class="pulse-dot"></span>
             ★ Hodinový manžel Brno &amp; okolí
-          </span>
+          </div>
 
           <h1 class="hw-hero-title hw-title--light">
-            Profesionální<br>
-            řemeslné práce<br>
-            pro váš domov
+            Poctivé řemeslo<br>
+            s důrazem na<br>
+            <span class="hw-highlight-accent">detail</span>
           </h1>
 
           <p class="hw-hero-desc hw-desc--light">
-            Jiří Kliment — 20 let praxe, z toho 15 let v Německu. Elektroinstalace,
-            malování, instalatérské i stavební práce v Brně. Přijdu včas, pracuji čistě
-            a za transparentní sazbu 500 Kč / hod.
+            Jiří Kliment — Profesionální hodinový manžel v Brně. Nabízím odborné elektroinstalace,
+            malování, instalatérské a drobné stavební práce. Zakládám si na absolutní čistotě,
+            dochvilnosti a poctivě odvedené práci s 20 lety praxe.
           </p>
 
-          <a href="kontakt.html" class="hw-btn-white" id="hero-cta" aria-label="Nezávazná poptávka">
-            Nezávazná poptávka
-            <i class="fa-solid fa-arrow-right" style="margin-left:10px;font-size:0.85em;"></i>
-          </a>
+          <!-- Buttons/CTA -->
+          <div class="hw-hero-btns" style="display: flex; gap: 16px; margin-bottom: 1.25rem; flex-wrap: wrap;">
+            <a href="#sjednani-terminu" class="hw-btn-white">
+              Sjednat termín <i class="fa-solid fa-arrow-right hw-btn-icon"></i>
+            </a>
+            <a href="sluzby.html" class="hw-btn-outline-light" style="display: inline-flex; align-items: center; padding: 12px 28px; border: 2px solid rgba(255, 255, 255, 0.4); color: #fff; font-family: 'Montserrat', sans-serif; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; border-radius: 50px; text-decoration: none; transition: all 0.3s;">
+              Služby &amp; Ceník
+            </a>
+          </div>
 
-          <!-- Stats strip -->
-          <div class="hw-hero-stats hw-stats--light">
+          <!-- Stats Grid with Liquid Glass Cards -->
+          <div class="hw-hero-stats">
             <div class="hw-stat">
-              <strong>20+</strong>
-              <span>let praxe</span>
+              <i class="fa-solid fa-award hw-stat-icon"></i>
+              <div class="hw-stat-value"><span class="hw-stat-number" data-target="20">0</span>+</div>
+              <span class="hw-stat-label">let praxe</span>
             </div>
-            <div class="hw-stat-sep hw-sep--light"></div>
             <div class="hw-stat">
-              <strong>500 Kč</strong>
-              <span>/ hodina</span>
+              <i class="fa-solid fa-coins hw-stat-icon"></i>
+              <div class="hw-stat-value"><span class="hw-stat-number" data-target="500">0</span> Kč</div>
+              <span class="hw-stat-label">/ hodina</span>
             </div>
-            <div class="hw-stat-sep hw-sep--light"></div>
             <div class="hw-stat">
-              <strong>15 let</strong>
-              <span>praxe v Německu</span>
+              <i class="fa-solid fa-users hw-stat-icon"></i>
+              <div class="hw-stat-value"><span class="hw-stat-number" data-target="200">0</span>+</div>
+              <span class="hw-stat-label">spokojených</span>
             </div>
-            <div class="hw-stat-sep hw-sep--light"></div>
             <div class="hw-stat">
-              <strong>100%</strong>
-              <span>spolehlivost</span>
+              <i class="fa-solid fa-shield-halved hw-stat-icon"></i>
+              <div class="hw-stat-value"><span class="hw-stat-number" data-target="100">0</span>%</div>
+              <span class="hw-stat-label">spolehlivost</span>
             </div>
           </div>
 
-        </div>
-        <!-- No right column: photo IS the background — visible almost entirely -->
-      </div>
+        </div><!-- /hw-hero-left -->
+      </div><!-- /hw-hero-inner -->
 
-      <!-- ★ CONCAVE ARC — smooth oval cutout at the BOTTOM of the hero photo.
-           The cream fill matches the services section below, creating the
-           smooth arch transition seen in the reference mockup. -->
-      <div class="hw-hero-arc" aria-hidden="true">
-        <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0,90 C360,0 1080,0 1440,90 L1440,90 L0,90 Z" fill="#F8F6F2"/>
-        </svg>
+      <!-- Scroll Mouse Indicator -->
+      <div class="hw-scroll-indicator" aria-hidden="true">
+        <span class="mouse-icon"><span class="wheel"></span></span>
+        <span>Scrollujte dolů</span>
       </div>
 
     </section><!-- /hero -->
-
-
-
-
     <!-- ============================================================
          SERVICES – wavy top divider, white bg, 3 cards
          ============================================================ -->
@@ -356,41 +352,83 @@
   <!-- ============================================================
        FOOTER – dark bg, social links centered
        ============================================================ -->
-  <footer class="hw-footer">
-    <div class="hw-container hw-footer-inner">
+    <footer class="hw-footer">
+    <div class="hw-container hw-footer-grid">
 
-      <!-- Brand -->
-      <div class="hw-footer-brand">
-        <span class="hw-footer-name">Jiří Kliment</span>
-        <span class="hw-footer-tagline">Hodinový manžel Brno a okolí</span>
+      <!-- Column 1: Brand & Philosophy -->
+      <div class="hw-footer-col hw-footer-brand-col">
+        <a href="index.html" class="hw-footer-logo" aria-label="Jiří Kliment – domů">
+          <span class="hw-footer-name">Jiří Kliment</span>
+          <span class="hw-footer-tagline">Hodinový manžel Brno</span>
+        </a>
+        <p class="hw-footer-about">
+          Více než 20 let poctivé řemeslné práce s německou precizností. 
+          Specializuji se na elektroinstalace, malování, instalatérské a stavební práce v Brně a okolí.
+        </p>
       </div>
 
-      <!-- Social links row (centered) -->
-      <div class="hw-footer-social" role="list" aria-label="Sociální sítě">
-        <a href="https://www.facebook.com/profile.php?id=100054555048234" target="_blank" rel="noopener noreferrer"
-           class="hw-social-link" role="listitem" aria-label="Facebook">
-          <i class="fa-brands fa-facebook-f"></i>
-        </a>
-        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"
-           class="hw-social-link" role="listitem" aria-label="Instagram">
-          <i class="fa-brands fa-instagram"></i>
-        </a>
-        <a href="https://maps.google.com/?q=Hlaváčova+458/43,+Brno" target="_blank" rel="noopener noreferrer"
-           class="hw-social-link" role="listitem" aria-label="Google Maps">
-          <i class="fa-brands fa-google"></i>
-        </a>
-        <a href="tel:+420736545899" class="hw-social-link" role="listitem" aria-label="Telefon">
-          <i class="fa-solid fa-phone"></i>
-        </a>
-        <a href="mailto:kliment.jiri@post.cz" class="hw-social-link" role="listitem" aria-label="E-mail">
-          <i class="fa-solid fa-envelope"></i>
-        </a>
+      <!-- Column 2: Navigation Links -->
+      <div class="hw-footer-col">
+        <h4 class="hw-footer-title">Rychlé odkazy</h4>
+        <ul class="hw-footer-links">
+          <li><a href="index.html">Úvodní stránka</a></li>
+          <li><a href="sluzby.html">Služby &amp; Ceník</a></li>
+          <li><a href="o-mne.html">O mně</a></li>
+          <li><a href="galerie.html">Galerie prací</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
       </div>
 
+      <!-- Column 3: Contact Details -->
+      <div class="hw-footer-col">
+        <h4 class="hw-footer-title">Kontakt &amp; Působnost</h4>
+        <ul class="hw-footer-contact">
+          <li>
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+            <a href="tel:+420736545899">+420 736 545 899</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            <a href="mailto:kliment.jiri@post.cz">kliment.jiri@post.cz</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+            <span>Hlaváčova 458/43, Brno</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
+            <span>IČ: 72436662 (Fyzická osoba)</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Social Links & CTA -->
+      <div class="hw-footer-col hw-footer-social-col">
+        <h4 class="hw-footer-title">Sledujte mě</h4>
+        <div class="hw-footer-social" role="list" aria-label="Sociální sítě">
+          <a href="https://www.facebook.com/profile.php?id=100054555048234" target="_blank" rel="noopener noreferrer"
+             class="hw-social-link" role="listitem" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"
+             class="hw-social-link" role="listitem" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://maps.google.com/?q=Hlaváčova+458/43,+Brno" target="_blank" rel="noopener noreferrer"
+             class="hw-social-link" role="listitem" aria-label="Google Maps">
+             <i class="fa-solid fa-map-location-dot"></i>
+          </a>
+        </div>
+        <a href="kontakt.html" class="hw-footer-cta-btn">Nezávazná poptávka</a>
+      </div>
+
+    </div>
+
+    <!-- Bottom copyrights area -->
+    <div class="hw-container hw-footer-bottom">
       <p class="hw-footer-copy">
-        &copy; 2026 Jiří Kliment. Všechna práva vyhrazena. | IČ: 72436662
+        &copy; 2026 Jiří Kliment. Všechna práva vyhrazena. | Web navržen s důrazem na německý standard a řemeslnou kvalitu.
       </p>
-
     </div>
   </footer>
 

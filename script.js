@@ -2,7 +2,7 @@
    INTERAKTIVNÍ LOGIKA – PREMIUM COZY PORTFOLIO (JIŘÍ KLIMENT)
    ========================================================================== */
 
-document.addEventListener('DOMContentLoaded', () => {
+const init = () => {
 
   // ==========================================================================
   // 1. DYNAMIC MOUSE SPOTLIGHT (MAGIC GLOW EFFECT FOR CARDS & BENTO BOXES)
@@ -50,20 +50,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================================================
-  // 3. SCROLL EFEKTY (PROGRESS BAR & BACK TO TOP)
+  // 3. SCROLL EFEKTY (BACK TO TOP)
   // ==========================================================================
-  const progressBar = document.getElementById('progress-bar');
   const backToTopBtn = document.getElementById('back-to-top');
 
   window.addEventListener('scroll', () => {
     const scrollTop = window.scrollY;
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    
-    // Scroll Progress
-    if (progressBar && docHeight > 0) {
-      const scrollPercent = (scrollTop / docHeight) * 100;
-      progressBar.style.width = `${scrollPercent}%`;
-    }
 
     // Back to Top Button
     if (backToTopBtn) {
@@ -104,8 +97,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================================================
   // 5. ANIMOVANÉ POČÍTADLO STATISTIK (COUNT-UP S EXPONENCIÁLNÍM EASINGEM)
   // ==========================================================================
-  const heroStatsSection = document.querySelector('.hero-stats');
-  const statNumbers = document.querySelectorAll('.hero-stat-val');
+  const heroStatsSection = document.querySelector('.hw-hero-stats');
+  const statNumbers = document.querySelectorAll('.hw-stat-number');
   let statsAnimated = false;
 
   const animateStats = () => {
@@ -380,4 +373,10 @@ document.addEventListener('DOMContentLoaded', () => {
   if (cookieAcceptNecessary) {
     cookieAcceptNecessary.addEventListener('click', () => setCookieConsent('necessary'));
   }
-});
+};
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
