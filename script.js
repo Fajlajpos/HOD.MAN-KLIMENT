@@ -22,32 +22,10 @@ const init = () => {
   });
 
   // ==========================================================================
-  // 2. MOBILNÍ NAVIGACE (HAMBURGER DRAWER)
+  // 2. MOBILNÍ NAVIGACE (Přesunuto do inline skriptů v HTML souborech)
+  // Rationale: Mobilní menu je obsluhováno přímo v HTML, aby se zamezilo prodlevě
+  // při načítání externího JS modulu a dvojitému navazování event listenerů.
   // ==========================================================================
-  const hamburgerBtn = document.getElementById('hamburger-btn');
-  const navMobile = document.getElementById('nav-mobile');
-  const navMobileLinks = document.querySelectorAll('.nav-mobile-link');
-
-  const toggleMobileMenu = () => {
-    const isExpanded = hamburgerBtn.getAttribute('aria-expanded') === 'true';
-    hamburgerBtn.setAttribute('aria-expanded', !isExpanded);
-    hamburgerBtn.classList.toggle('active');
-    
-    navMobile.classList.toggle('active');
-    navMobile.setAttribute('aria-hidden', isExpanded);
-    document.body.style.overflow = isExpanded ? '' : 'hidden';
-  };
-
-  if (hamburgerBtn && navMobile) {
-    hamburgerBtn.addEventListener('click', toggleMobileMenu);
-    navMobileLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        if (navMobile.classList.contains('active')) {
-          toggleMobileMenu();
-        }
-      });
-    });
-  }
 
   // ==========================================================================
   // 3. SCROLL EFEKTY (BACK TO TOP)

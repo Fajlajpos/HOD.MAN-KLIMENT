@@ -2491,21 +2491,9 @@ p {
   width: 100%;
 }
 
-/* Decorative dot patterns */
+/* Decorative dot patterns - Hidden globally per user request */
 .hw-dots {
-  position: absolute;
-  width: 220px;
-  height: 220px;
-  background-image: radial-gradient(circle, rgba(200,137,42,0.2) 2px, transparent 2px);
-  background-size: 22px 22px;
-  pointer-events: none;
-  z-index: 1;
-}
-.hw-dots--tr { top: 120px; right: -30px; }
-.hw-dots--bl { bottom: 60px; left: -30px; }
-/* Light variant: white dots for photo background hero */
-.hw-dots--light {
-  background-image: radial-gradient(circle, rgba(255,255,255,0.12) 2px, transparent 2px);
+  display: none !important;
 }
 
 /* Left column - clean transparent box directly on photo overlay */
@@ -3973,8 +3961,12 @@ a.hw-contact-info-value:hover { color: var(--hw-accent, #C8892A); }
   content: '';
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(200, 137, 42, 0.04) 1.2px, transparent 1.2px);
-  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(rgba(197, 155, 39, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(197, 155, 39, 0.045) 1px, transparent 1px),
+    linear-gradient(rgba(197, 155, 39, 0.012) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(197, 155, 39, 0.012) 1px, transparent 1px);
+  background-size: 80px 80px, 80px 80px, 16px 16px, 16px 16px;
   pointer-events: none;
   z-index: 0;
 }
@@ -3999,7 +3991,7 @@ a.hw-contact-info-value:hover { color: var(--hw-accent, #C8892A); }
   top: 0; left: 0; width: 100%; height: 100%;
   background: radial-gradient(
     280px circle at var(--mouse-x, 0) var(--mouse-y, 0),
-    rgba(200, 137, 42, 0.08),
+    rgba(197, 155, 39, 0.08),
     transparent 80%
   );
   pointer-events: none;
@@ -4030,36 +4022,56 @@ a.hw-contact-info-value:hover { color: var(--hw-accent, #C8892A); }
   position: absolute;
   top: 10%;
   right: -10%;
-  width: min(500px, 90vw);
-  height: min(500px, 90vw);
-  background: radial-gradient(circle, rgba(200, 137, 42, 0.06) 0%, transparent 70%);
-  filter: blur(80px);
+  width: min(550px, 95vw);
+  height: min(550px, 95vw);
+  background: radial-gradient(circle, rgba(197, 155, 39, 0.065) 0%, transparent 70%);
+  filter: blur(90px);
   pointer-events: none;
   z-index: 0;
+  animation: pulse-glow-1 25s infinite ease-in-out;
 }
 .page-home #recenze::before {
   content: '';
   position: absolute;
   bottom: -10%;
   left: -10%;
-  width: min(500px, 90vw);
-  height: min(500px, 90vw);
-  background: radial-gradient(circle, rgba(200, 137, 42, 0.06) 0%, transparent 70%);
-  filter: blur(80px);
+  width: min(550px, 95vw);
+  height: min(550px, 95vw);
+  background: radial-gradient(circle, rgba(197, 155, 39, 0.065) 0%, transparent 70%);
+  filter: blur(90px);
   pointer-events: none;
   z-index: 0;
+  animation: pulse-glow-2 22s infinite ease-in-out;
 }
 .page-home #faq::before {
   content: '';
   position: absolute;
   top: 5%;
   right: -10%;
-  width: min(500px, 90vw);
-  height: min(500px, 90vw);
-  background: radial-gradient(circle, rgba(200, 137, 42, 0.05) 0%, transparent 70%);
-  filter: blur(80px);
+  width: min(550px, 95vw);
+  height: min(550px, 95vw);
+  background: radial-gradient(circle, rgba(197, 155, 39, 0.055) 0%, transparent 70%);
+  filter: blur(90px);
   pointer-events: none;
   z-index: 0;
+  animation: pulse-glow-3 20s infinite ease-in-out;
+}
+
+/* Breathing Animations for Ambient Glows */
+@keyframes pulse-glow-1 {
+  0% { transform: translate(0, 0) scale(1); opacity: 0.8; }
+  50% { transform: translate(60px, -40px) scale(1.15); opacity: 1; }
+  100% { transform: translate(0, 0) scale(1); opacity: 0.8; }
+}
+@keyframes pulse-glow-2 {
+  0% { transform: translate(0, 0) scale(1); opacity: 0.7; }
+  50% { transform: translate(-50px, 50px) scale(0.92); opacity: 0.95; }
+  100% { transform: translate(0, 0) scale(1); opacity: 0.7; }
+}
+@keyframes pulse-glow-3 {
+  0% { transform: translate(0, 0) scale(1); opacity: 0.9; }
+  50% { transform: translate(40px, 30px) scale(1.08); opacity: 0.75; }
+  100% { transform: translate(0, 0) scale(1); opacity: 0.9; }
 }
 
 /* ── Upgraded Card Hover Transitions & Architectural Upgrades ── */
@@ -4144,6 +4156,53 @@ a.hw-contact-info-value:hover { color: var(--hw-accent, #C8892A); }
     bottom: 0;
     width: 1px;
     background: linear-gradient(to bottom, rgba(197, 155, 39, 0.25) 0%, rgba(197, 155, 39, 0.05) 70%, transparent 100%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Technical Coordinate Stamps along vertical axis guides */
+  #sluzby-preview .hw-container::after {
+    content: 'VDE 0100 // GRID-SEC1';
+    position: absolute;
+    left: -35px;
+    top: 60px;
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    font-family: 'Inter', monospace;
+    font-size: 0.62rem;
+    color: rgba(197, 155, 39, 0.35);
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 1;
+  }
+  #recenze .hw-container::after {
+    content: 'DIN 18202 // GRID-SEC2';
+    position: absolute;
+    left: -35px;
+    top: 60px;
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    font-family: 'Inter', monospace;
+    font-size: 0.62rem;
+    color: rgba(197, 155, 39, 0.35);
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 1;
+  }
+  #faq .hw-container::after {
+    content: 'BRNO 49.1951° N, 16.6068° E';
+    position: absolute;
+    left: -35px;
+    top: 60px;
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    font-family: 'Inter', monospace;
+    font-size: 0.62rem;
+    color: rgba(197, 155, 39, 0.35);
+    letter-spacing: 0.1em;
+    white-space: nowrap;
     pointer-events: none;
     z-index: 1;
   }
@@ -4244,6 +4303,15 @@ a.hw-contact-info-value:hover { color: var(--hw-accent, #C8892A); }
 }
 .hw-faq-question i {
   display: none !important;
+}
+
+/* ── Premium Tactile Noise Texture for Content & Footer (Excluding Hero) ── */
+.hw-section,
+.hw-section--cream,
+.hw-services,
+.hw-cta-section,
+.hw-footer {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.018'/%3E%3C/svg%3E") !important;
 }
 
 
