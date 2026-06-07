@@ -2233,6 +2233,23 @@ p {
   padding: 0 28px;
 }
 
+/* ── Premium pre-header pill badge ── */
+.hw-label {
+  display: inline-flex;
+  align-items: center;
+  background: var(--hw-accent-alpha);
+  border: 1px solid rgba(200, 137, 42, 0.22);
+  color: var(--hw-accent);
+  padding: 6px 16px;
+  border-radius: var(--hw-pill);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.8rem;
+}
+
 /* ══════════════════════════════════════════════════════════════════
    HEADER
    ══════════════════════════════════════════════════════════════════ */
@@ -2839,6 +2856,8 @@ p {
   margin-bottom: 64px;
   position: relative;
   z-index: 1;
+  border-left: 3px solid var(--hw-accent);
+  padding-left: 24px;
 }
 .hw-section-title {
   font-family: 'Playfair Display', serif;
@@ -3102,7 +3121,7 @@ p {
    FOOTER
    ══════════════════════════════════════════════════════════════════ */
 .hw-footer {
-  background: var(--bg-dark);
+  background: #0D0D0D;
   color: #fff;
   padding: 80px 0 40px;
   border-top: 1px solid rgba(197, 155, 39, 0.15);
@@ -3896,4 +3915,336 @@ a.hw-contact-info-value:hover { color: var(--hw-accent, #C8892A); }
 .hw-ba-section {
   background: var(--hw-white, #fff);
 }
+
+/* ── FAQ Section grid & items ── */
+.hw-faq-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  margin-top: 40px;
+}
+@media (min-width: 768px) {
+  .hw-faq-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+}
+.hw-faq-item {
+  background: #ffffff;
+  border-radius: var(--hw-r-card, 20px);
+  padding: 32px;
+  box-shadow: var(--hw-shadow-sm, 0 4px 20px rgba(0,0,0,0.06));
+  border: 1px solid rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.38s var(--hw-spring, cubic-bezier(0.175,0.885,0.32,1.275)), box-shadow 0.38s;
+}
+.hw-faq-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+}
+.hw-faq-question {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: var(--hw-dark, #1C1C1C);
+  line-height: 1.4;
+  display: flex;
+  align-items: flex-start;
+}
+.hw-faq-question i {
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+.hw-faq-answer {
+  font-size: 0.95rem;
+  color: var(--hw-muted, #7A7060);
+  line-height: 1.7;
+}
+
+/* ── Blueprint Background Pattern for Homepage Sections ── */
+.page-home .hw-section,
+.page-home .hw-section--cream {
+  position: relative;
+}
+.page-home .hw-section::after,
+.page-home .hw-section--cream::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(200, 137, 42, 0.04) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+  pointer-events: none;
+  z-index: 0;
+}
+.page-home .hw-section > *,
+.page-home .hw-section--cream > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Spotlight Cursor Hover Glow for Homepage Cards ── */
+.hw-card,
+.hw-faq-item,
+.hw-testimonial {
+  position: relative;
+  overflow: hidden;
+}
+.hw-card::before,
+.hw-faq-item::before,
+.hw-testimonial::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: radial-gradient(
+    280px circle at var(--mouse-x, 0) var(--mouse-y, 0),
+    rgba(200, 137, 42, 0.08),
+    transparent 80%
+  );
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.4s var(--hw-ease);
+}
+.hw-card:hover::before,
+.hw-faq-item:hover::before,
+.hw-testimonial:hover::before {
+  opacity: 1;
+}
+
+/* Ensure content sits above spotlight background */
+.hw-card > *,
+.hw-faq-item > *,
+.hw-testimonial > * {
+  position: relative;
+  z-index: 1;
+}
+.hw-card img {
+  z-index: 2 !important;
+}
+
+/* ── Glowing Background Blur Blobs for Homepage Sections ── */
+.page-home .hw-services::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  right: -10%;
+  width: min(500px, 90vw);
+  height: min(500px, 90vw);
+  background: radial-gradient(circle, rgba(200, 137, 42, 0.06) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+.page-home #recenze::before {
+  content: '';
+  position: absolute;
+  bottom: -10%;
+  left: -10%;
+  width: min(500px, 90vw);
+  height: min(500px, 90vw);
+  background: radial-gradient(circle, rgba(200, 137, 42, 0.06) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+.page-home #faq::before {
+  content: '';
+  position: absolute;
+  top: 5%;
+  right: -10%;
+  width: min(500px, 90vw);
+  height: min(500px, 90vw);
+  background: radial-gradient(circle, rgba(200, 137, 42, 0.05) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Upgraded Card Hover Transitions & Architectural Upgrades ── */
+.hw-card,
+.hw-faq-item,
+.hw-testimonial {
+  transition: transform 0.45s cubic-bezier(0.165, 0.84, 0.44, 1), 
+              box-shadow 0.45s cubic-bezier(0.165, 0.84, 0.44, 1), 
+              border-color 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.hw-card:hover,
+.hw-faq-item:hover,
+.hw-testimonial:hover {
+  transform: translateY(-8px);
+  border-color: rgba(197, 155, 39, 0.28) !important;
+  box-shadow: 0 20px 48px rgba(197, 155, 39, 0.1) !important;
+}
+
+/* 1. Monospaced Section Indices (CSS Generated) */
+#sluzby-preview .hw-section-header::before {
+  content: '[ 01 // KVALITNÍ SLUŽBY ]';
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--accent, #C59B27);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+#recenze .hw-section-header::before {
+  content: '[ 02 // ZPĚTNÁ VAZBA ]';
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--accent, #C59B27);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+#faq .hw-section-header::before {
+  content: '[ 03 // ČASTÉ DOTAZY ]';
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--accent, #C59B27);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+#sjednani-terminu .hw-cta-left::before {
+  content: '[ 04 // RYCHLÝ KONTAKT ]';
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--accent, #C59B27);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+/* 2. Architectural Gridlines & Axis Guides */
+@media (min-width: 992px) {
+  .page-home .hw-section .hw-container,
+  .page-home .hw-section--cream .hw-container,
+  .page-home .hw-cta-section .hw-container {
+    position: relative;
+  }
+  .page-home .hw-section .hw-container::before,
+  .page-home .hw-section--cream .hw-container::before,
+  .page-home .hw-cta-section .hw-container::before {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, rgba(197, 155, 39, 0.25) 0%, rgba(197, 155, 39, 0.05) 70%, transparent 100%);
+    pointer-events: none;
+    z-index: 1;
+  }
+}
+
+/* Header Crosshair mark '+' */
+.page-home .hw-section-header::after {
+  content: '+';
+  position: absolute;
+  top: -8px;
+  left: -20px;
+  font-family: 'Inter', monospace;
+  color: var(--accent, #C59B27);
+  font-size: 1.1rem;
+  font-weight: 400;
+  opacity: 0.85;
+}
+
+/* 3. Technical Bracket Framing on Card Hover */
+.hw-card::after,
+.hw-testimonial::after {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border: 1px solid transparent;
+  pointer-events: none;
+  z-index: 10;
+  transition: border-color 0.4s var(--hw-ease);
+}
+.hw-card:hover::after,
+.hw-testimonial:hover::after {
+  border-color: rgba(197, 155, 39, 0.22);
+  clip-path: polygon(
+    0 0, 15px 0, 15px 1px, 1px 1px, 1px 15px, 0 15px,
+    0 100%, 0 calc(100% - 15px), 1px calc(100% - 15px), 1px calc(100% - 1px), 15px calc(100% - 1px), 15px 100%,
+    100% 100%, calc(100% - 15px) 100%, calc(100% - 15px) calc(100% - 1px), calc(100% - 1px) calc(100% - 1px), calc(100% - 1px) calc(100% - 15px), 100% calc(100% - 15px),
+    100% 0, 100% 15px, calc(100% - 1px) 15px, calc(100% - 1px) 1px, calc(100% - 15px) 1px, calc(100% - 15px) 0
+  );
+}
+
+/* Card images hover zoom-in */
+.hw-card div img {
+  transition: transform 0.65s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.hw-card:hover div img {
+  transform: scale(1.05);
+}
+
+/* 4. Drafting Compass Orbit Animation (CTA Section) */
+.hw-circle-ring {
+  width: 480px;
+  height: 480px;
+  border: 1px dashed rgba(197, 155, 39, 0.28) !important;
+  animation: hw-spin 45s linear infinite;
+  opacity: 0.8;
+}
+.hw-cta-right::before {
+  content: '';
+  position: absolute;
+  width: 440px;
+  height: 440px;
+  border: 1px solid rgba(197, 155, 39, 0.12);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+}
+@keyframes hw-spin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* 5. FAQ Precision Details & Numbers */
+.hw-faq-grid {
+  counter-reset: faq-counter;
+}
+.hw-faq-item {
+  counter-increment: faq-counter;
+  padding: 32px !important;
+  border: 1px solid rgba(21, 21, 21, 0.05) !important;
+}
+.hw-faq-question {
+  position: relative;
+  padding-left: 36px;
+}
+.hw-faq-question::before {
+  content: '0' counter(faq-counter) '.';
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent, #C59B27);
+  letter-spacing: 0.05em;
+}
+.hw-faq-question i {
+  display: none !important;
+}
+
+
 

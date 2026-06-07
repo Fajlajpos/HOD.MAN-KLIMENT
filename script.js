@@ -7,7 +7,7 @@ const init = () => {
   // ==========================================================================
   // 1. DYNAMIC MOUSE SPOTLIGHT (MAGIC GLOW EFFECT FOR CARDS & BENTO BOXES)
   // ==========================================================================
-  const spotlightElements = document.querySelectorAll('.service-card, .bento-box');
+  const spotlightElements = document.querySelectorAll('.service-card, .bento-box, .hw-card, .hw-faq-item, .hw-testimonial');
   
   const updateSpotlight = (e, el) => {
     const rect = el.getBoundingClientRect();
