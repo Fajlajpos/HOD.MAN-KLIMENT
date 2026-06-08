@@ -75,7 +75,7 @@
     </section>
 
     <!-- ── BEFORE / AFTER SLIDER ── -->
-    <section class="hw-section--cream" id="srovnani">
+    <section class="hw-section--dark" id="srovnani">
       <div class="hw-container">
         <div class="hw-section-header">
           <span class="hw-label">Srovnání</span>
@@ -278,7 +278,16 @@
   <script>
     (function(){
       const h=document.getElementById('hw-header'),hb=document.getElementById('hw-hamburger'),mn=document.getElementById('hw-mobile-nav');
-      window.addEventListener('scroll',()=>h.classList.toggle('hw-header--scrolled',window.scrollY>20));
+      let scrollTicking = false;
+      window.addEventListener('scroll', () => {
+        if (!scrollTicking) {
+          window.requestAnimationFrame(() => {
+            h.classList.toggle('hw-header--scrolled', window.scrollY > 20);
+            scrollTicking = false;
+          });
+          scrollTicking = true;
+        }
+      }, { passive: true });
       if(hb&&mn){hb.addEventListener('click',()=>{const o=mn.classList.toggle('open');hb.classList.toggle('active',o);hb.setAttribute('aria-expanded',o);mn.setAttribute('aria-hidden',!o);document.body.style.overflow=o?'hidden':'';});mn.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mn.classList.remove('open');hb.classList.remove('active');hb.setAttribute('aria-expanded','false');mn.setAttribute('aria-hidden','true');document.body.style.overflow='';}));}
     })();
   </script>

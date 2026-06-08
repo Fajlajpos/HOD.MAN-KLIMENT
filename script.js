@@ -7,18 +7,28 @@ const init = () => {
   // ==========================================================================
   // 1. DYNAMIC MOUSE SPOTLIGHT (MAGIC GLOW EFFECT FOR CARDS & BENTO BOXES)
   // ==========================================================================
-  const spotlightElements = document.querySelectorAll('.service-card, .bento-box, .hw-card, .hw-faq-item, .hw-testimonial');
+  const spotlightElements = document.querySelectorAll('.service-card, .bento-box');
   
-  const updateSpotlight = (e, el) => {
-    const rect = el.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    el.style.setProperty('--mouse-x', `${x}px`);
-    el.style.setProperty('--mouse-y', `${y}px`);
-  };
-
   spotlightElements.forEach(el => {
-    el.addEventListener('mousemove', (e) => updateSpotlight(e, el));
+    let rect = null;
+
+    el.addEventListener('mouseenter', () => {
+      rect = el.getBoundingClientRect();
+    });
+
+    el.addEventListener('mousemove', (e) => {
+      if (!rect) {
+        rect = el.getBoundingClientRect();
+      }
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      el.style.setProperty('--mouse-x', `${x}px`);
+      el.style.setProperty('--mouse-y', `${y}px`);
+    });
+
+    el.addEventListener('mouseleave', () => {
+      rect = null;
+    });
   });
 
   // ==========================================================================
@@ -32,19 +42,24 @@ const init = () => {
   // ==========================================================================
   const backToTopBtn = document.getElementById('back-to-top');
 
-  window.addEventListener('scroll', () => {
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  let backToTopTicking = false;
 
-    // Back to Top Button
-    if (backToTopBtn) {
-      if (scrollTop > 500) {
-        backToTopBtn.classList.add('visible');
-      } else {
-        backToTopBtn.classList.remove('visible');
-      }
+  window.addEventListener('scroll', () => {
+    if (!backToTopTicking) {
+      window.requestAnimationFrame(() => {
+        const scrollTop = window.scrollY;
+        if (backToTopBtn) {
+          if (scrollTop > 500) {
+            backToTopBtn.classList.add('visible');
+          } else {
+            backToTopBtn.classList.remove('visible');
+          }
+        }
+        backToTopTicking = false;
+      });
+      backToTopTicking = true;
     }
-  });
+  }, { passive: true });
 
   if (backToTopBtn) {
     backToTopBtn.addEventListener('click', () => {
@@ -131,20 +146,38 @@ const init = () => {
     const handle = slider.querySelector('.slider-handle');
     const rangeInput = slider.querySelector('.slider-range-input');
 
-    const updateSliderWidth = () => {
+    const updateSlider = () => {
       const sliderWidth = slider.clientWidth;
+      const sliderValue = rangeInput.value;
       afterImage.style.width = `${sliderWidth}px`;
       afterImage.style.maxWidth = `${sliderWidth}px`;
+      afterImageContainer.style.width = `${sliderValue}%`;
+      handle.style.transform = `translateX(${sliderValue / 100 * sliderWidth}px)`;
     };
 
-    rangeInput.addEventListener('input', (e) => {
-      const sliderValue = e.target.value;
-      afterImageContainer.style.width = `${sliderValue}%`;
-      handle.style.left = `${sliderValue}%`;
+    let sliderTicking = false;
+    rangeInput.addEventListener('input', () => {
+      if (!sliderTicking) {
+        window.requestAnimationFrame(() => {
+          updateSlider();
+          sliderTicking = false;
+        });
+        sliderTicking = true;
+      }
     });
 
-    window.addEventListener('resize', updateSliderWidth);
-    updateSliderWidth();
+    let resizeTicking = false;
+    window.addEventListener('resize', () => {
+      if (!resizeTicking) {
+        window.requestAnimationFrame(() => {
+          updateSlider();
+          resizeTicking = false;
+        });
+        resizeTicking = true;
+      }
+    }, { passive: true });
+
+    updateSlider();
   }
 
   // ==========================================================================

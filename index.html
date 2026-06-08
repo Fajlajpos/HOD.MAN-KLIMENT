@@ -398,7 +398,7 @@
     <!-- ============================================================
          CTA / SCHEDULE – 2-col: left text+bullets, right circle photo
          ============================================================ -->
-    <section class="hw-cta-section" id="sjednani-terminu">
+    <section class="hw-section--cream" id="sjednani-terminu">
 
       <div class="hw-container hw-cta-inner">
 
@@ -573,9 +573,16 @@
       const mobileNav  = document.getElementById('hw-mobile-nav');
 
       // Scroll shadow
+      let scrollTicking = false;
       window.addEventListener('scroll', () => {
-        header.classList.toggle('hw-header--scrolled', window.scrollY > 20);
-      });
+        if (!scrollTicking) {
+          window.requestAnimationFrame(() => {
+            header.classList.toggle('hw-header--scrolled', window.scrollY > 20);
+            scrollTicking = false;
+          });
+          scrollTicking = true;
+        }
+      }, { passive: true });
 
       // Hamburger toggle
       if (hamburger && mobileNav) {
