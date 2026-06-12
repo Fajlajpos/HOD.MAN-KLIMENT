@@ -229,6 +229,7 @@
             <div class="hw-card-icon" aria-hidden="true">
               <i class="fa-regular fa-lightbulb fa-lg"></i>
             </div>
+            <span class="hw-card-code">[ SPEC // ELEKTRO-01 ]</span>
             <h3 class="hw-card-title">Elektroinstalace</h3>
             <p class="hw-card-desc">
               Montáž svítidel, výměna zásuvek a vypínačů, zapojení varných desek
@@ -247,6 +248,7 @@
             <div class="hw-card-icon" aria-hidden="true">
               <i class="fa-solid fa-paint-roller fa-lg"></i>
             </div>
+            <span class="hw-card-code">[ SPEC // DECO-02 ]</span>
             <h3 class="hw-card-title">Malování a Tapetování</h3>
             <p class="hw-card-desc">
               Tmelení omítek, štukování děr, profesionální malování bytů bez stékanců
@@ -265,6 +267,7 @@
             <div class="hw-card-icon" aria-hidden="true">
               <i class="fa-solid fa-wrench fa-lg"></i>
             </div>
+            <span class="hw-card-code">[ SPEC // HYDR-03 ]</span>
             <h3 class="hw-card-title">Instalatérské práce</h3>
             <p class="hw-card-desc">
               Výměna dřezových i koupelnových baterií, čištění ucpaných sifonů,
@@ -283,6 +286,7 @@
             <div class="hw-card-icon" aria-hidden="true">
               <i class="fa-solid fa-screwdriver-wrench fa-lg"></i>
             </div>
+            <span class="hw-card-code">[ SPEC // STRUCT-04 ]</span>
             <h3 class="hw-card-title">Montáže a údržba</h3>
             <p class="hw-card-desc">
               Sestavení nábytku z krabic (IKEA atd.), věšení polic, televizí na zeď,
@@ -349,47 +353,78 @@
     </section>
 
     <!-- ============================================================
-         FAQ – Často kladené otázky, white bg
+         FAQ – Často kladené otázky, white bg, 2-column layout
          ============================================================ -->
     <section class="hw-section" id="faq">
-      <div class="hw-container">
-        <div class="hw-section-header">
-          <h2 class="hw-section-title">Často kladené <span class="hw-highlight-accent">otázky</span></h2>
-          <p class="hw-section-subtitle">Rychlé odpovědi na to, co klienty před zahájením prací nejčastěji zajímá.</p>
+      <div class="hw-container hw-faq-container-grid">
+        
+        <!-- Left Column: Header Info -->
+        <div class="hw-faq-sidebar">
+          <div class="hw-faq-sidebar-sticky">
+            <div class="hw-section-header">
+              <h2 class="hw-section-title">Často kladené <span class="hw-highlight-accent">otázky</span></h2>
+              <p class="hw-section-subtitle">Rychlé odpovědi na to, co klienty před zahájením prací nejčastěji zajímá.</p>
+            </div>
+            <!-- Decorative technical blueprint graphic -->
+            <div class="hw-faq-blueprint-graphic" aria-hidden="true">
+              <div class="hw-blueprint-crosshair">+</div>
+              <div class="hw-blueprint-circle"></div>
+              <div class="hw-blueprint-tag">ARCH.DET // FAQ-03</div>
+            </div>
+          </div>
         </div>
         
-        <div class="hw-faq-grid">
+        <!-- Right Column: Accordion -->
+        <div class="hw-faq-accordion">
+          
           <div class="hw-faq-item reveal-fade">
-            <h3 class="hw-faq-question">
-              <i class="fa-solid fa-circle-question" style="color:var(--hw-accent);margin-right:10px;margin-top:3px;"></i>
-              Jaká je vaše hodinová sazba?
-            </h3>
-            <p class="hw-faq-answer">Hodinová sazba pro všechny běžné řemeslné práce (elektro, malování, instalatérské a zednické práce) je transparentních 500 Kč za hodinu. Nejsem plátce DPH, takže ceny jsou konečné.</p>
+            <button type="button" class="hw-faq-trigger" aria-expanded="false">
+              <span class="hw-faq-question-text">Jaká je vaše hodinová sazba?</span>
+              <span class="hw-faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+            </button>
+            <div class="hw-faq-panel">
+              <div class="hw-faq-panel-inner">
+                <p class="hw-faq-answer">Hodinová sazba pro všechny běžné řemeslné práce (elektro, malování, instalatérské a zednické práce) je transparentních 500 Kč za hodinu. Nejsem plátce DPH, takže ceny jsou konečné.</p>
+              </div>
+            </div>
           </div>
           
           <div class="hw-faq-item reveal-fade">
-            <h3 class="hw-faq-question">
-              <i class="fa-solid fa-circle-question" style="color:var(--hw-accent);margin-right:10px;margin-top:3px;"></i>
-              Jak se účtuje doprava po Brně a okolí?
-            </h3>
-            <p class="hw-faq-answer">Dopravné po Brně je zpoplatněno jednorázovým fixním paušálem 500 Kč. Ten pokrývá dojezd a dovoz veškerého nářadí. Pro realizace mimo Brno je účtován paušál 500 Kč + 10 Kč/km od okraje Brna.</p>
+            <button type="button" class="hw-faq-trigger" aria-expanded="false">
+              <span class="hw-faq-question-text">Jak se účtuje doprava po Brně a okolí?</span>
+              <span class="hw-faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+            </button>
+            <div class="hw-faq-panel">
+              <div class="hw-faq-panel-inner">
+                <p class="hw-faq-answer">Dopravné po Brně je zpoplatněno jednorázovým fixním paušálem 500 Kč. Ten pokrývá dojezd a dovoz veškerého nářadí. Pro realizace mimo Brno je účtován paušál 500 Kč + 10 Kč/km od okraje Brna.</p>
+              </div>
+            </div>
           </div>
           
           <div class="hw-faq-item reveal-fade">
-            <h3 class="hw-faq-question">
-              <i class="fa-solid fa-circle-question" style="color:var(--hw-accent);margin-right:10px;margin-top:3px;"></i>
-              Jste pojištěný pro případ poškození majetku?
-            </h3>
-            <p class="hw-faq-answer">Ano, mám sjednané plné profesní pojištění odpovědnosti za škodu způsobenou při řemeslné činnosti. Bezpečnost a klid klienta jsou pro mě prioritou.</p>
+            <button type="button" class="hw-faq-trigger" aria-expanded="false">
+              <span class="hw-faq-question-text">Jste pojištěný pro případ poškození majetku?</span>
+              <span class="hw-faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+            </button>
+            <div class="hw-faq-panel">
+              <div class="hw-faq-panel-inner">
+                <p class="hw-faq-answer">Ano, mám sjednané plné profesní pojištění odpovědnosti za škodu způsobenou při řemeslné činnosti. Bezpečnost a klid klienta jsou pro mě prioritou.</p>
+              </div>
+            </div>
           </div>
           
           <div class="hw-faq-item reveal-fade">
-            <h3 class="hw-faq-question">
-              <i class="fa-solid fa-circle-question" style="color:var(--hw-accent);margin-right:10px;margin-top:3px;"></i>
-              Jak u vás probíhá nákup materiálu?
-            </h3>
-            <p class="hw-faq-answer">Běžný spojovací a montážní materiál (kabely, hmoždinky, silikon, ventily) vozím s sebou a připočítávám jej k ceně dle reálné spotřeby. Specifický materiál rád nakoupím a dovezu po předchozí domluvě.</p>
+            <button type="button" class="hw-faq-trigger" aria-expanded="false">
+              <span class="hw-faq-question-text">Jak u vás probíhá nákup materiálu?</span>
+              <span class="hw-faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+            </button>
+            <div class="hw-faq-panel">
+              <div class="hw-faq-panel-inner">
+                <p class="hw-faq-answer">Běžný spojovací a montážní materiál (kabely, hmoždinky, silikon, ventily) vozím s sebou a připočítávám jej k ceně dle reálné spotřeby. Specifický materiál rád nakoupím a dovezu po předchozí domluvě.</p>
+              </div>
+            </div>
           </div>
+          
         </div>
       </div>
     </section>

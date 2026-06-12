@@ -2951,10 +2951,36 @@ p {
   align-items: flex-start;
   text-align: left;
   transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
-  border: 1px solid rgba(200, 137, 42, 0.15) !important;
   counter-increment: cards-counter;
   overflow: hidden !important; /* contain spotlight circle */
   position: relative;
+}
+
+/* Mouse cursor tracking spotlight glow */
+.hw-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(350px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(200, 137, 42, 0.09), transparent 80%);
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.hw-card:hover::before {
+  opacity: 1;
+}
+
+.hw-card-code {
+  font-family: 'Inter', monospace;
+  font-size: 0.64rem;
+  font-weight: 700;
+  color: var(--hw-accent, #C8892A);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: block;
+  z-index: 1;
 }
 
 .hw-card:hover {
@@ -4082,48 +4108,99 @@ a.hw-contact-info-value:hover { color: var(--hw-accent, #C8892A); }
   background: var(--hw-white, #fff);
 }
 
-/* ── FAQ Section grid & items ── */
-.hw-faq-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 28px;
-  margin-top: 40px;
-}
-@media (min-width: 768px) {
-  .hw-faq-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
-  }
-}
-.hw-faq-item {
-  background: #ffffff;
-  border-radius: var(--hw-r-card, 20px);
-  padding: 32px;
-  box-shadow: var(--hw-shadow-sm, 0 4px 20px rgba(0,0,0,0.06));
-  border: 1px solid rgba(0,0,0,0.04);
+/* ── FAQ Section Accordion ── */
+.hw-faq-accordion {
+  counter-reset: faq-counter;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  transition: transform 0.38s var(--hw-spring, cubic-bezier(0.175,0.885,0.32,1.275)), box-shadow 0.38s;
+  gap: 16px;
+  max-width: 900px;
+  margin: 40px auto 0;
+  width: 100%;
+}
+.hw-faq-item {
+  counter-increment: faq-counter;
+  background: #ffffff;
+  border: 1px solid rgba(21, 21, 21, 0.08) !important;
+  border-radius: 14px !important;
+  overflow: hidden;
+  transition: border-color 0.3s var(--hw-ease), box-shadow 0.3s var(--hw-ease);
 }
 .hw-faq-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+  border-color: rgba(200, 137, 42, 0.3) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.02);
 }
-.hw-faq-question {
+.hw-faq-item.active {
+  border-color: rgba(200, 137, 42, 0.45) !important;
+  box-shadow: 0 12px 30px rgba(200, 137, 42, 0.05);
+}
+.hw-faq-trigger {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 28px 22px 64px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
   font-family: 'Playfair Display', serif;
-  font-size: 1.18rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: var(--hw-dark, #1C1C1C);
-  line-height: 1.4;
-  display: flex;
-  align-items: flex-start;
+  transition: color 0.3s;
+  position: relative;
 }
-.hw-faq-question i {
-  margin-top: 3px;
+.hw-faq-trigger:hover {
+  color: var(--hw-accent, #C8892A);
+}
+.hw-faq-trigger::before {
+  content: '0' counter(faq-counter) '.';
+  position: absolute;
+  left: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--hw-accent, #C8892A);
+  letter-spacing: 0.05em;
+}
+.hw-faq-question-text {
+  flex: 1;
+  line-height: 1.4;
+}
+.hw-faq-icon {
+  font-size: 0.85rem;
+  color: var(--hw-accent, #C8892A);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s, color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(200, 137, 42, 0.06);
   flex-shrink: 0;
+  margin-left: 16px;
+}
+.hw-faq-item.active .hw-faq-icon {
+  transform: rotate(180deg);
+  background: var(--hw-accent, #C8892A);
+  color: #ffffff;
+}
+.hw-faq-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s;
+  opacity: 0;
+}
+.hw-faq-panel-inner {
+  padding: 0 28px 24px 64px;
 }
 .hw-faq-answer {
+  font-family: 'Inter', sans-serif;
   font-size: 0.95rem;
   color: var(--hw-muted, #7A7060);
   line-height: 1.7;
@@ -4251,7 +4328,7 @@ a.hw-contact-info-value:hover { color: var(--hw-accent, #C8892A); }
 
 /* ── Upgraded Card Hover Transitions & Architectural Upgrades ── */
 .hw-card,
-.hw-faq-item {
+.hw-testimonial {
   transition: transform 0.45s cubic-bezier(0.165, 0.84, 0.44, 1), 
               box-shadow 0.45s cubic-bezier(0.165, 0.84, 0.44, 1), 
               border-color 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -4263,25 +4340,12 @@ a.hw-contact-info-value:hover { color: var(--hw-accent, #C8892A); }
 }
 
 .hw-testimonial {
-  transition: transform 0.45s cubic-bezier(0.165, 0.84, 0.44, 1), 
-              box-shadow 0.45s cubic-bezier(0.165, 0.84, 0.44, 1), 
-              border-color 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
   background: rgba(255, 255, 255, 0.85) linear-gradient(rgba(197, 155, 39, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(197, 155, 39, 0.04) 1px, transparent 1px) !important;
   background-size: 16px 16px !important;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(200, 137, 42, 0.15) !important;
-  border-radius: 20px !important;
   box-shadow: var(--hw-shadow-sm) !important;
 }
 
 .hw-card:hover,
-.hw-faq-item:hover {
-  transform: translateY(-8px) !important;
-  border-color: rgba(200, 137, 42, 0.45) !important;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(200, 137, 42, 0.08) !important;
-}
-
 .hw-testimonial:hover {
   transform: translateY(-8px) !important;
   border-color: rgba(200, 137, 42, 0.45) !important;
@@ -4427,33 +4491,7 @@ a.hw-contact-info-value:hover { color: var(--hw-accent, #C8892A); }
   to { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
-/* 5. FAQ Precision Details & Numbers */
-.hw-faq-grid {
-  counter-reset: faq-counter;
-}
-.hw-faq-item {
-  counter-increment: faq-counter;
-  padding: 32px !important;
-  border: 1px solid rgba(21, 21, 21, 0.05) !important;
-}
-.hw-faq-question {
-  position: relative;
-  padding-left: 36px;
-}
-.hw-faq-question::before {
-  content: '0' counter(faq-counter) '.';
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--accent, #C59B27);
-  letter-spacing: 0.05em;
-}
-.hw-faq-question i {
-  display: none !important;
-}
+
 
 /* ── Premium Tactile Noise Texture for Content & Footer (Excluding Hero) ── */
 .hw-footer {
@@ -4507,5 +4545,99 @@ a.hw-contact-info-value:hover { color: var(--hw-accent, #C8892A); }
 .page-home .hw-section,
 .page-home .hw-services {
   background: linear-gradient(180deg, var(--hw-cream, #F7F4EC) 0%, #EFECE2 100%) !important;
+}
+
+
+/* ── FAQ 2-Column Grid Layout ── */
+.hw-faq-container-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+@media (min-width: 992px) {
+  .hw-faq-container-grid {
+    grid-template-columns: 1fr 1.4fr;
+    gap: 60px;
+    align-items: start;
+  }
+  .hw-faq-sidebar-sticky {
+    position: sticky;
+    top: 110px; /* scrolls cleanly with sticky header */
+  }
+}
+.hw-faq-sidebar .hw-section-header {
+  text-align: left !important;
+  margin-bottom: 24px;
+}
+.hw-faq-sidebar .hw-section-title::after {
+  left: 0 !important;
+  transform: none !important;
+}
+
+/* Decorative blueprint detailing */
+.hw-faq-blueprint-graphic {
+  position: relative;
+  height: 120px;
+  border: 1px dashed rgba(200, 137, 42, 0.12);
+  border-radius: 12px;
+  margin-top: 32px;
+  display: none; /* hide on mobile */
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+@media (min-width: 992px) {
+  .hw-faq-blueprint-graphic {
+    display: flex;
+  }
+}
+.hw-blueprint-crosshair {
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  font-family: 'Inter', monospace;
+  font-size: 0.9rem;
+  color: var(--hw-accent, #C8892A);
+  opacity: 0.6;
+}
+.hw-blueprint-circle {
+  width: 64px;
+  height: 64px;
+  border: 1px solid rgba(200, 137, 42, 0.1);
+  border-radius: 50%;
+  position: relative;
+}
+.hw-blueprint-circle::after {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border: 1px dashed rgba(200, 137, 42, 0.08);
+  border-radius: 50%;
+}
+.hw-blueprint-tag {
+  position: absolute;
+  bottom: 8px;
+  right: 12px;
+  font-family: 'Inter', monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--hw-muted, #7A7060);
+  letter-spacing: 0.05em;
+}
+
+/* ── Refined CTA Card Blueprint Layout ── */
+.page-home .hw-cta-left {
+  background: rgba(255, 255, 255, 0.6) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(200, 137, 42, 0.12) !important;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+@media (max-width: 767px) {
+  .page-home .hw-cta-left {
+    padding: 24px;
+  }
 }
 

@@ -7,7 +7,7 @@ const init = () => {
   // ==========================================================================
   // 1. DYNAMIC MOUSE SPOTLIGHT (MAGIC GLOW EFFECT FOR CARDS & BENTO BOXES)
   // ==========================================================================
-  const spotlightElements = document.querySelectorAll('.service-card, .bento-box');
+  const spotlightElements = document.querySelectorAll('.service-card, .bento-box, .hw-card');
   
   spotlightElements.forEach(el => {
     let rect = null;
@@ -384,6 +384,48 @@ const init = () => {
   if (cookieAcceptNecessary) {
     cookieAcceptNecessary.addEventListener('click', () => setCookieConsent('necessary'));
   }
+
+  // ==========================================================================
+  // 10. FAQ ACCORDION INTERACTION (SMOOTH SLIDE-DOWN TOGGLE)
+  // ==========================================================================
+  const faqItems = document.querySelectorAll('.hw-faq-item');
+  
+  faqItems.forEach(item => {
+    const trigger = item.querySelector('.hw-faq-trigger');
+    const panel = item.querySelector('.hw-faq-panel');
+    
+    if (trigger && panel) {
+      trigger.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        
+        // Collapse all other active items
+        faqItems.forEach(otherItem => {
+          if (otherItem !== item && otherItem.classList.contains('active')) {
+            otherItem.classList.remove('active');
+            const otherPanel = otherItem.querySelector('.hw-faq-panel');
+            const otherTrigger = otherItem.querySelector('.hw-faq-trigger');
+            if (otherPanel) {
+              otherPanel.style.maxHeight = null;
+            }
+            if (otherTrigger) {
+              otherTrigger.setAttribute('aria-expanded', 'false');
+            }
+          }
+        });
+        
+        // Toggle current item
+        if (isActive) {
+          item.classList.remove('active');
+          panel.style.maxHeight = null;
+          trigger.setAttribute('aria-expanded', 'false');
+        } else {
+          item.classList.add('active');
+          panel.style.maxHeight = `${panel.scrollHeight}px`;
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+      });
+    }
+  });
 };
 
 if (document.readyState === 'loading') {
